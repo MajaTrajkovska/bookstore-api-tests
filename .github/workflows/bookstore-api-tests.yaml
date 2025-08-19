@@ -73,16 +73,16 @@ jobs:
               bookstore-api-tests
           fi
 
-      # 10. Clean up Docker container
-      - name: Cleanup container
-        if: always()
-        run: docker rm -f bookstore-tests || true
-
-
       # 7. Copy Allure test results from container to host
       - name: Copy Allure results
         if: always()
         run: docker cp bookstore-tests:/app/target/allure-results ./allure-results
+
+
+      # 10. Clean up Docker container
+      - name: Cleanup container
+        if: always()
+        run: docker rm -f bookstore-tests || true
 
 
       # 8. Generate Allure HTML report
