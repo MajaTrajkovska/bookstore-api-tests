@@ -42,6 +42,7 @@ jobs:
 
       # 4. Clean previous Allure outputs
       - name: Clean previous Allure outputs
+        if: always()
         run: |
           rm -rf ./allure-results || true
           rm -rf ./allure-report || true
@@ -68,10 +69,12 @@ jobs:
 
       # 7. Stop and remove Docker container (ensure results are finalized)
       - name: Cleanup container
+        if: always()
         run: docker rm -f bookstore-tests || true
 
       # 8. Copy Allure test results from container to host
       - name: Copy Allure results
+        if: always()
         run: docker cp bookstore-tests:/app/target/allure-results ./allure-results || true
 
       # 9. Generate Allure HTML report
