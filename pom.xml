@@ -1,0 +1,119 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.example.bookstoreapi</groupId>
+    <artifactId>bookstore-api-tests</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+    <name>bookstore-api-tests</name>
+
+    <build>
+        <plugins>
+
+            <!-- Run tests, allow filtering by tags, and enable Allure listener -->
+            <!-- <plugin>
+               <groupId>org.apache.maven.plugins</groupId>
+               <artifactId>maven-surefire-plugin</artifactId>
+               <version>3.2.5</version>
+               <configuration>
+                   <useModulePath>false</useModulePath>
+                   <properties>
+                      <property>
+                        <name>junit.jupiter.tags</name>
+                        <value>${junit.jupiter.tags}</value>
+                      </property>
+                    <property>
+                        <name>junit.jupiter.extensions.autodetection.enabled</name>
+                        <value>true</value>
+                    </property>
+                   </properties>
+        <systemPropertyVariables>
+            <allure.results.directory>target/allure-results</allure.results.directory>
+        </systemPropertyVariables>
+    </configuration>
+</plugin> -->
+<plugin>
+    <groupId>org.apache.maven.plugins</groupId>
+    <artifactId>maven-surefire-plugin</artifactId>
+    <version>3.2.5</version>
+    <configuration>
+        <useModulePath>false</useModulePath>
+        <configurationParameters>
+            junit.jupiter.extensions.autodetection.enabled=true,
+            junit.jupiter.tags=${junit.jupiter.tags}
+        </configurationParameters>
+        <systemPropertyVariables>
+            <allure.results.directory>target/allure-results</allure.results.directory>
+        </systemPropertyVariables>
+    </configuration>
+</plugin>
+
+            <!-- Allure Maven Plugin -->
+            <plugin>
+                <groupId>io.qameta.allure</groupId>
+                <artifactId>allure-maven</artifactId>
+                <version>2.12.0</version>
+                <configuration>
+                    <resultsDirectory>${project.build.directory}/allure-results</resultsDirectory>
+                    <reportDirectory>${project.build.directory}/allure-report</reportDirectory>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+    <dependencies>
+        <!-- Rest Assured -->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>rest-assured</artifactId>
+            <version>5.4.0</version>
+        </dependency>
+
+        <!-- JSON Schema Validator -->
+        <dependency>
+            <groupId>io.rest-assured</groupId>
+            <artifactId>json-schema-validator</artifactId>
+            <version>5.4.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- JUnit 5 -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.9.3</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.9.3</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Java Faker -->
+        <dependency>
+            <groupId>com.github.javafaker</groupId>
+            <artifactId>javafaker</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+
+        <!-- Allure for JUnit 5 -->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-junit5</artifactId>
+            <version>2.25.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Allure + Rest Assured Filter -->
+        <dependency>
+            <groupId>io.qameta.allure</groupId>
+            <artifactId>allure-rest-assured</artifactId>
+            <version>2.25.0</version>
+        </dependency>
+    </dependencies>
+</project>

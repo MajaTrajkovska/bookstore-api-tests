@@ -1,0 +1,21 @@
+# Maven/Java
+/target/
+*.log
+*.class
+*.jar
+*.war
+*.ear
+
+# IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Others
+allure-results/
