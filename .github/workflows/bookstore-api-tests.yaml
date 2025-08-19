@@ -149,6 +149,8 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./${{ steps.set-folders.outputs.REPORT_FOLDER }}
+          force_orphan: true     # Forces a complete replacement of gh-pages branch
+          keep_files: false      # Don't keep any old files
 
 
       # 11. Print Allure report link
