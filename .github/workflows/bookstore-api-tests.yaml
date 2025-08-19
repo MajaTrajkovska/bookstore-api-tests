@@ -1,85 +1,54 @@
 name: Bookstore API Tests
 
 on:
-# Run workflow on every push/merge to main
+  # Trigger when pushing or merging into main branch → run full suite
   push:
-    branches: [ main ]   
-# Run workflow on PR creation/updates targeting main
+    branches: [ main ]
+
   pull_request:
-    branches: [ main ]  
-# Allow manual trigger from GitHub Actions UI 
-  workflow_dispatch:      
+    branches: [ main ]
+
+  # Manual trigger → allows specifying tags and baseUrl
+  workflow_dispatch:
     inputs:
       tags:
-        description: 'Test tags to run (e.g. positive, negative, edge)'
+        description: 'Test tags to run (e.g., positive, negative, edge)'
         required: false
         default: ''
       baseUrl:
         description: 'Base URL for API'
         required: false
         default: 'https://fakerestapi.azurewebsites.net'
+
+  # Scheduled nightly run at 2 AM UTC → run full suite
   schedule:
-    # Nightly job: Run all tests at 2 AM UTC every day
     - cron: '0 2 * * *'
 
 jobs:
-  tests:
-    runs-on: ubuntu-latest   #Use latest Ubuntu runner
+  test:
+    name: Build and Run API Tests
+    runs-on: ubuntu-latest
 
     steps:
-      # 1. Checkout repository
+      # 1. Checkout the repository code
       - name: Checkout code
         uses: actions/checkout@v4
 
-      # 2. Set up Docker Buildx (for building Docker images efficiently)
+      # 2. Set up Docker Buildx (required for building images)
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
-       # 3. Determine results folder and report folder based on execution mode
-      - name: Set results and report folders
-        id: set-folders
-        run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -n "${{ github.event.inputs.tags }}" ]; then
-            TAG="${{ github.event.inputs.tags }}"
-            echo "RESULTS_FOLDER=allure-results-${TAG}" >> $GITHUB_OUTPUT
-            echo "REPORT_FOLDER=allure-report-${TAG}" >> $GITHUB_OUTPUT
-            echo "REPORT_TITLE=Test Results for ${TAG} tests" >> $GITHUB_OUTPUT
-          else
-            echo "RESULTS_FOLDER=allure-results" >> $GITHUB_OUTPUT
-            echo "REPORT_FOLDER=allure-report" >> $GITHUB_OUTPUT
-            echo "REPORT_TITLE=Test Results for all tests" >> $GITHUB_OUTPUT
-          fi
-
-      # # 3. Cache Maven dependencies to speed up builds
-      # - name: Cache Maven packages
-      #   uses: actions/cache@v4
-      #   with:
-      #     path: ~/.m2
-      #     key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-      #     restore-keys: |
-      #       ${{ runner.os }}-maven-
-
-      # 4. Build Docker image for the test framework
+      # 3. Build Docker image for the automation framework
       - name: Build Docker image
-        run: docker build -t bookstore-api-tests .
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          load: true
+          tags: bookstore-api-tests:latest
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
 
-      # # 5. Ensure previous run artifacts are removed (avoid mixing results)
-      # - name: Clean previous Allure outputs
-      #   if: always()
-      #   run: |
-      #     rm -rf ./allure-results || true
-      #     rm -rf ./allure-report || true
-
-      # 5. Ensure previous run artifacts are removed (avoid mixing results)
-      - name: Clean previous Allure outputs
-        run: |
-          rm -rf ./${{ steps.set-folders.outputs.RESULTS_FOLDER }} || true
-          rm -rf ./${{ steps.set-folders.outputs.REPORT_FOLDER }} || true
-          mkdir -p ./${{ steps.set-folders.outputs.RESULTS_FOLDER }}
-
-      # 6. Run tests inside container
-      # If the tests are triggered manually via workflow_dispatch with tags provided it will run the tests that match those tags
-      # otherwise it will run the full test suite
+      # 4. Run tests inside the Docker container
       - name: Run tests
         run: |
           if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -n "${{ github.event.inputs.tags }}" ]; then
@@ -87,75 +56,94 @@ jobs:
             docker run --name bookstore-tests \
               -e TAGS=${{ github.event.inputs.tags }} \
               -e BASE_URL=${{ github.event.inputs.baseUrl }} \
+              -v ${{ github.workspace }}/target/allure-results:/app/target/allure-results \
               bookstore-api-tests
           else
             echo "Running full test suite"
             docker run --name bookstore-tests \
               -e BASE_URL=https://fakerestapi.azurewebsites.net \
+              -v ${{ github.workspace }}/target/allure-results:/app/target/allure-results \
               bookstore-api-tests
           fi
 
-      # # 7. Copy Allure test results from container to host
-      # - name: Copy Allure results
-      #   if: always()
-      #   run: docker cp bookstore-tests:/app/target/allure-results ./allure-results
-
- # 7. Copy Allure test results from container to appropriate host folder
-      - name: Copy Allure results
-        if: always()
-        run: docker cp bookstore-tests:/app/target/allure-results/. ./${{ steps.set-folders.outputs.RESULTS_FOLDER }}
-
-
-      # 10. Clean up Docker container
-      - name: Cleanup container
-        if: always()
-        run: docker rm -f bookstore-tests || true
-
-
-      # # 8. Generate Allure HTML report
-      # - name: Generate Allure HTML report
-      #   if: always()
-      #   run: |
-      #     npm install -g allure-commandline --save-dev
-      #     allure generate ./allure-results --clean -o ./allure-report
-
-       # 9. Generate Allure HTML report from the appropriate results folder
-      - name: Generate Allure HTML report
+      # 5. Save container logs (useful for debugging)
+      - name: Save container logs
         if: always()
         run: |
-          npm install -g allure-commandline --save-dev
-          allure generate ./${{ steps.set-folders.outputs.RESULTS_FOLDER }} --clean -o ./${{ steps.set-folders.outputs.REPORT_FOLDER }}
+          mkdir -p logs
+          docker logs bookstore-tests > logs/test-execution.log
+        continue-on-error: true
 
-      # 8. Upload Allure HTML report as artifact (available in GitHub Actions UI)
-      # - name: Upload Allure HTML report
-      #   if: always()
-      #   uses: actions/upload-artifact@v4
-      #   with:
-      #     name: allure-html-report
-      #     path: ./allure-report
+      # 6. Clean up Docker container after tests
+      - name: Clean up container
+        if: always()
+        run: docker rm -f bookstore-tests || true
+        continue-on-error: true
 
-      # # 9. Deploy Allure report to GitHub Pages
-      # - name: Deploy Allure report to GitHub Pages
-      #   if: always()
-      #   uses: peaceiris/actions-gh-pages@v4
-      #   with:
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
-      #     publish_dir: ./allure-report
+      # 7. Upload execution logs as artifact
+      - name: Upload execution logs as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: test-logs
+          path: logs/
+          retention-days: 7
 
-      # 10. Deploy Allure report to GitHub Pages
-      - name: Deploy Allure report to GitHub Pages
+      # 8. Download Allure history from previous runs (needed for trends)
+      - name: Get Allure history
+        uses: actions/download-artifact@v4
+        if: always()
+        continue-on-error: true
+        with:
+          name: allure-history
+          path: allure-history
+
+      # 9. Generate new Allure report
+      - name: Generate Allure Report
+        uses: simple-elf/allure-report-action@master
+        if: always()
+        with:
+          allure_results: target/allure-results
+          allure_history: allure-history
+          keep_reports: 20
+
+      # 10. Upload Allure report as artifact
+      - name: Upload Allure Report as artifact
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: allure-report
+          path: allure-report
+          retention-days: 30
+
+      # 11. Upload updated Allure history for next run
+      - name: Upload Allure history for next run
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: allure-history
+          path: allure-history
+          retention-days: 30
+
+      # 12. Deploy report to GitHub Pages
+      - name: Deploy Allure Report to GitHub Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./${{ steps.set-folders.outputs.REPORT_FOLDER }}
-          force_orphan: true     # Forces a complete replacement of gh-pages branch
-          keep_files: false      # Don't keep any old files
+          publish_branch: gh-pages
+          publish_dir: ./allure-history
+          # Use subfolder based on run type: tag or full
+          destination_dir: ${{ github.event.inputs.tags || 'full' }}
+          keep_files: true
+          force_orphan: false
 
-
-      # 11. Print Allure report link
+      # 13. Print direct link to GitHub Pages report
       - name: Show Allure Report Link
         if: always()
         run: |
-          echo "Here is your report: https://MajaTrajkovska.github.io/bookstore-api-tests/"
-          echo "Here is your report: https://MajaTrajkovska.github.io/bookstore-api-tests/" >> $GITHUB_STEP_SUMMARY
+          if [ -n "${{ github.event.inputs.tags }}" ]; then
+            echo "Allure Report: https://MajaTrajkovska.github.io/bookstore-api-tests>/${{ github.event.inputs.tags }}/" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "Allure Report: https://MajaTrajkovska.github.io/bookstore-api-tests>/full/" >> $GITHUB_STEP_SUMMARY
+          fi
