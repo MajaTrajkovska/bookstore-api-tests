@@ -1,6 +1,6 @@
-### Bookstore API Test Automation 📚
+# Bookstore API Test Automation 📚
 
-This project contains automated API tests for the Bookstore API using REST Assured, JUnit 5, and Allure reporting.
+This project contains automated API tests for the Bookstore API using REST Assured, JUnit 5, Maven and Allure for reporting.
 
 ### 📋 Table of Contents
 1. Project Overview

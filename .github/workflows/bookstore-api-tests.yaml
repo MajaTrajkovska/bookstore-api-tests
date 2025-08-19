@@ -1,0 +1,83 @@
+name: Bookstore API Tests
+
+on:
+# Run workflow on every push/merge to main
+  push:
+    branches: [ main ]   
+# Run workflow on PR creation/updates targeting main
+  pull_request:
+    branches: [ main ]  
+# Allow manual trigger from GitHub Actions UI 
+  workflow_dispatch:      
+    inputs:
+      tags:
+        description: 'Test tags to run (e.g., negative, positive, edge)'
+        required: false
+        default: ''
+      baseUrl:
+        description: 'Base URL for API'
+        required: false
+        default: 'https://fakerestapi.azurewebsites.net'
+  schedule:
+    # Nightly job: Run all tests at 2 AM UTC every day
+    - cron: '0 2 * * *'
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest   #Use latest Ubuntu runner
+
+    steps:
+      # 1. Checkout repository
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # 2. Set up Docker Buildx (for building Docker images efficiently)
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v3
+
+      # 3. Cache Maven dependencies to speed up builds
+      - name: Cache Maven packages
+        uses: actions/cache@v4
+        with:
+          path: ~/.m2
+          key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+          restore-keys: |
+            ${{ runner.os }}-maven-
+
+      # 4. Build Docker image for the test framework
+      - name: Build Docker image
+        run: docker build -t bookstore-api-tests .
+
+      # 5. Run tests inside container
+      # If the tests are triggered manually via workflow_dispatch with tags provided it will run the tests that match those tags
+      # otherwise it will run the full test suite
+      - name: Run tests
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -n "${{ github.event.inputs.tags }}" ]; then
+            echo "Running tests with tags: ${{ github.event.inputs.tags }}"
+            docker run --name bookstore-tests \
+              -e TAGS=${{ github.event.inputs.tags }} \
+              -e BASE_URL=${{ github.event.inputs.baseUrl }} \
+              bookstore-api-tests
+          else
+            echo "Running full test suite"
+            docker run --name bookstore-tests \
+              -e BASE_URL=https://fakerestapi.azurewebsites.net \
+              bookstore-api-tests
+          fi
+
+      # 6. Copy Allure test results from container to host
+      - name: Copy Allure results
+        run: docker cp bookstore-tests:/app/target/allure-results ./allure-results
+
+      # 7. Upload Allure results as artifact (available in GitHub Actions UI)
+      - name: Upload Allure Results
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results
+          path: ./allure-results
+
+        # 8. Clean up Docker container
+      - name: Cleanup container
+        if: always()
+        run: docker rm -f bookstore-tests || true
