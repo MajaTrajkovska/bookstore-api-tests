@@ -48,7 +48,14 @@ jobs:
       - name: Build Docker image
         run: docker build -t bookstore-api-tests .
 
-      # 5. Run tests inside container
+      # 5. Ensure previous run artifacts are removed (avoid mixing results)
+      - name: Clean previous Allure outputs
+        if: always()
+        run: |
+          rm -rf ./allure-results || true
+          rm -rf ./allure-report || true
+
+      # 6. Run tests inside container
       # If the tests are triggered manually via workflow_dispatch with tags provided it will run the tests that match those tags
       # otherwise it will run the full test suite
       - name: Run tests
@@ -66,20 +73,13 @@ jobs:
               bookstore-api-tests
           fi
 
-      # 5.1 Ensure previous run artifacts are removed (avoid mixing results)
-      - name: Clean previous Allure outputs
-        if: always()
-        run: |
-          rm -rf ./allure-results || true
-          rm -rf ./allure-report || true
-
-      # 6. Copy Allure test results from container to host
+      # 7. Copy Allure test results from container to host
       - name: Copy Allure results
         if: always()
         run: docker cp bookstore-tests:/app/target/allure-results ./allure-results
 
 
-      # 7. Generate Allure HTML report
+      # 8. Generate Allure HTML report
       - name: Generate Allure HTML report
         if: always()
         run: |
@@ -93,6 +93,8 @@ jobs:
       #   with:
       #     name: allure-html-report
       #     path: ./allure-report
+
+      # 9. Deploy Allure report to GitHub Pages
       - name: Deploy Allure report to GitHub Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v4
@@ -100,12 +102,12 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./allure-report
 
-      # 9. Clean up Docker container
+      # 10. Clean up Docker container
       - name: Cleanup container
         if: always()
         run: docker rm -f bookstore-tests || true
 
-      # 10. Print Allure report link
+      # 11. Print Allure report link
       - name: Show Allure Report Link
         if: always()
         run: |
