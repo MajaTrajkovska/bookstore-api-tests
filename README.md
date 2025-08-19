@@ -2,7 +2,7 @@
 
 This project contains automated API tests for the Bookstore API using REST Assured, JUnit 5, Maven and Allure for reporting.
 
-### 📋 Table of Contents
+# 📋 Table of Contents
 1. Project Overview
 2. Project Structure
 3. Getting Started
@@ -12,7 +12,7 @@ This project contains automated API tests for the Bookstore API using REST Assur
 7. Example Workflows
 8. Troubleshooting
 
-### 1. Project Overview
+## 1. Project Overview
 This framework tests the REST APIs for a Bookstore application, focusing on:
 
 - Authors API endpoints (GET, POST, PUT, DELETE)
@@ -20,7 +20,7 @@ This framework tests the REST APIs for a Bookstore application, focusing on:
 
 Tests are organized by resource and HTTP method with appropriate test cases for validation.
 
-### 2. Project Structure
+## 2. Project Structure
 bookstore-api-tests/
 ├── src/
 │   ├── main/java/com/example/bookstoreapi/
@@ -46,53 +46,53 @@ bookstore-api-tests/
 └── pom.xml                         # Project dependencies and build config
 
 
-### 3. 🚀 Getting Started
-# Prerequisites
+## 3. 🚀 Getting Started
+### Prerequisites
 - Java 17 or higher
 - Maven 3.8+
 - Docker (for containerized execution)
 - Allure CLI (for viewing test reports)
 
-# Local Setup
+### Local Setup
 - Clone the repository
 - Install prerequisites
 
 
-### 4. ▶️ Running Tests 
-# Local Execution
+## 4. ▶️ Running Tests 
+### Local Execution
 
-*Run all tests:
+- Run all tests:
 ```sh
 mvn clean test
 ```
 
-*Run only tests with a specific JUnit 5 tag (e.g., "positive"):
+- Run only tests with a specific JUnit 5 tag (e.g., "positive"):
 ```sh
    mvn clean test -Dgroups="positive"   
    mvn clean test -Dgroups="negative"   
    mvn clean test -Dgroups="edge"
    ```
 
-*Generate and view the Allure report:
+- Generate and view the Allure report:
 ```sh
 allure serve target/allure-results
 ```
 *(This will open the report in your browser. Make sure Allure CLI is installed.)*
 
 
-### 5. Docker Execution 
+## 5. Docker Execution 
 
-Build the Docker image:
+- Build the Docker image:
 ```sh
 docker build -t bookstore-api-tests .
 ```
 
-Run all tests in the container:
+- Run all tests in the container:
 ```sh
 docker run --name bookstore-tests bookstore-api-tests
 ```
 
-Run tests in the container with specific tag:
+- Run tests in the container with specific tag:
 ```sh
 docker run --name bookstore-tests -e TAGS=negative bookstore-api-tests
 ```
@@ -116,7 +116,7 @@ docker run --name bookstore-tests -e BASE_URL=https://your-api-url.com bookstore
 In our case the BASE_URL has a fixed value: https://fakerestapi.azurewebsites.net
 
 
-### 6. 📊 Allure Reporting
+## 6. 📊 Allure Reporting
 The report includes:
 
 - Test execution results
@@ -124,26 +124,26 @@ The report includes:
 - Test durations and trends
 
 
-### 7. 📝 Example Workflows
+## 7. 📝 Example Workflows
 Complete Test Cycle with Docker
 
-# Build the Docker image
+- Build the Docker image
 docker build -t bookstore-api-tests .
 
-# Run negative tests
+- Run negative tests
 docker run --name bookstore-tests -e TAGS=negative bookstore-api-tests
 
-# Copy the results
+- Copy the results
 docker cp bookstore-tests:/app/target/allure-results ./target/
 
-# Generate and view the report
+- Generate and view the report
 allure serve target/allure-results
 
-# Clean up
+- Clean up
 docker rm bookstore-tests
 
 
-### 8. 🔧 Troubleshooting
+## 8. 🔧 Troubleshooting
 If you encounter any issues while running the tests, please refer to the following common solutions:
 
 Ensure Docker service is running when attempting to build or run containers
