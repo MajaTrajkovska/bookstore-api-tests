@@ -68,10 +68,12 @@ jobs:
 
       # 6. Copy Allure test results from container to host
       - name: Copy Allure results
+        if: always()
         run: docker cp bookstore-tests:/app/target/allure-results ./allure-results
 
       # 7. Upload Allure results as artifact (available in GitHub Actions UI)
       - name: Upload Allure Results
+        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: allure-results
