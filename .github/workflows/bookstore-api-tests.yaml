@@ -35,6 +35,34 @@ jobs:
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
+      # Set results/report folder based on tag
+      - name: Set results folder
+        id: folders
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ] && [ -n "${{ github.event.inputs.tags }}" ]; then
+            TAG="${{ github.event.inputs.tags }}"
+            if [ "$TAG" = "positive" ]; then
+              FOLDER="positive"
+            elif [ "$TAG" = "negative" ]; then
+              FOLDER="negative"
+            elif [ "$TAG" = "edge" ]; then
+              FOLDER="edge"
+            else
+              FOLDER="$TAG"
+            fi
+            echo "RESULTS=allure-results-$FOLDER" >> $GITHUB_OUTPUT
+            echo "REPORT=allure-report-$FOLDER" >> $GITHUB_OUTPUT
+          else
+            echo "RESULTS=allure-results-all" >> $GITHUB_OUTPUT
+            echo "REPORT=allure-report-all" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Clean previous Allure outputs
+        run: |
+          rm -rf ./${{ steps.folders.outputs.RESULTS }} || true
+          rm -rf ./${{ steps.folders.outputs.REPORT }} || true
+
+
       # # 3. Cache Maven dependencies to speed up builds
       # - name: Cache Maven packages
       #   uses: actions/cache@v4
@@ -48,12 +76,12 @@ jobs:
       - name: Build Docker image
         run: docker build -t bookstore-api-tests .
 
-      # 5. Ensure previous run artifacts are removed (avoid mixing results)
-      - name: Clean previous Allure outputs
-        if: always()
-        run: |
-          rm -rf ./allure-results || true
-          rm -rf ./allure-report || true
+      # # 5. Ensure previous run artifacts are removed (avoid mixing results)
+      # - name: Clean previous Allure outputs
+      #   if: always()
+      #   run: |
+      #     rm -rf ./allure-results || true
+      #     rm -rf ./allure-report || true
 
       # 6. Run tests inside container
       # If the tests are triggered manually via workflow_dispatch with tags provided it will run the tests that match those tags
