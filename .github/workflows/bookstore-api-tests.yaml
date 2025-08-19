@@ -102,6 +102,7 @@ jobs:
 
  # 7. Copy Allure test results from container to appropriate host folder
       - name: Copy Allure results
+        if: always()
         run: docker cp bookstore-tests:/app/target/allure-results/. ./${{ steps.set-folders.outputs.RESULTS_FOLDER }}
 
 
@@ -120,6 +121,7 @@ jobs:
 
        # 9. Generate Allure HTML report from the appropriate results folder
       - name: Generate Allure HTML report
+        if: always()
         run: |
           npm install -g allure-commandline --save-dev
           allure generate ./${{ steps.set-folders.outputs.RESULTS_FOLDER }} --clean -o ./${{ steps.set-folders.outputs.REPORT_FOLDER }}
@@ -142,6 +144,7 @@ jobs:
 
       # 10. Deploy Allure report to GitHub Pages
       - name: Deploy Allure report to GitHub Pages
+        if: always()
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
