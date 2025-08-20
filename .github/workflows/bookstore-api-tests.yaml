@@ -31,9 +31,9 @@ jobs:
   # JOB 1 - Run full test suite on push to main
   # ===================================================
     run-all-tests:
-    name: Run All Tests (Push/PR)
-    runs-on: ubuntu-latest
     if: github.event_name == 'push' || github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    name: Run All Tests (Push/PR)
 
     steps:
       # 1. Checkout repository
