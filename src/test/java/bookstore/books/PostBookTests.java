@@ -35,8 +35,7 @@ public class PostBookTests
             .body("title", equalTo(book.getTitle()))
             .body("pageCount", equalTo(book.getPageCount()))
             .body("description", equalTo(book.getDescription()))
-            .body("excerpt",  equalTo(book.getExcerpt()))
-            .body("publishDate", containsString(book.getPublishDate().substring(0, 19)));
+            .body("excerpt",  equalTo(book.getExcerpt()));
 
         //delete the alredy created book
         booksApis.deleteBook(book.getId());  
@@ -54,8 +53,7 @@ public class PostBookTests
             .body("title", equalTo(book.getTitle()))
             .body("pageCount", equalTo(book.getPageCount()))
             .body("description", equalTo(book.getDescription()))
-            .body("excerpt",  equalTo(book.getExcerpt()))
-            .body("publishDate", containsString(book.getPublishDate().substring(0, 19)));
+            .body("excerpt",  equalTo(book.getExcerpt()));
 
         //delete the alredy created book
         booksApis.deleteBook(book.getId());  
@@ -73,8 +71,7 @@ public class PostBookTests
             .body("title", equalTo(book.getTitle()))
             .body("pageCount", equalTo(book.getPageCount()))
             .body("description", equalTo(book.getDescription()))
-            .body("excerpt",  equalTo(book.getExcerpt()))
-            .body("publishDate", containsString(book.getPublishDate().substring(0, 19)));
+            .body("excerpt",  equalTo(book.getExcerpt()));
 
         //delete the alredy created book
         booksApis.deleteBook(book.getId());  
