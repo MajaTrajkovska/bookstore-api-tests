@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 114,
+    &quot;title&quot;: &quot;An Acceptable Time&quot;,
+    &quot;description&quot;: &quot;Soluta atque non placeat expedita in maxime numquam id dolore est asperiores corporis.&quot;,
+    &quot;pageCount&quot;: -5,
+    &quot;excerpt&quot;: &quot;Sint nesciunt molestiae. Id inventore delectus ipsa nesciunt nam aut et. Ipsa ratione deserunt quod maxime molestiae.&quot;,
+    &quot;publishDate&quot;: &quot;2025-08-20T14:17:55.957816536&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 114,
+    &quot;title&quot;: &quot;An Acceptable Time&quot;,
+    &quot;description&quot;: &quot;Soluta atque non placeat expedita in maxime numquam id dolore est asperiores corporis.&quot;,
+    &quot;pageCount&quot;: -5,
+    &quot;excerpt&quot;: &quot;Sint nesciunt molestiae. Id inventore delectus ipsa nesciunt nam aut et. Ipsa ratione deserunt quod maxime molestiae.&quot;,
+    &quot;publishDate&quot;: &quot;2025-08-20T14:17:55.957816536&quot;
+}&#39;
+</div>
