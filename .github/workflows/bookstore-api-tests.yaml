@@ -34,7 +34,6 @@ jobs:
     name: Run All Tests - Push/PR
     runs-on: ubuntu-latest
     
-
     steps:
       # 1. Checkout repository
       - name: Checkout code
@@ -53,7 +52,12 @@ jobs:
         if: always()
         run: rm -rf ./allure-results ./allure-report || true
 
-      # 5. Run all tests
+      # 5. Setup timestamp
+      - name: Set timestamp
+        id: timestamp
+        run: echo "timestamp=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_OUTPUT
+
+      # 6. Run all tests
       - name: Run all tests
         run: |
           echo "Running full test suite"
@@ -61,39 +65,39 @@ jobs:
             -e BASE_URL=https://fakerestapi.azurewebsites.net \
             bookstore-api-tests
 
-      # 6. Copy results from container
+      # 7. Copy results from container
       - name: Copy Allure results
         if: always()
         run: docker cp bookstore-tests:/app/target/allure-results ./allure-results
 
-      # 7. Clean container
+      # 8. Clean container
       - name: Cleanup container
         if: always()
         run: docker rm -f bookstore-tests || true
 
-      # 8. Generate Allure report
+      # 9. Generate Allure report
       - name: Generate Allure HTML report
         if: always()
         run: |
           npm install -g allure-commandline --save-dev
-          allure generate ./allure-results --clean -o ./allure-report
+          allure generate ./allure-results --clean -o ./allure-report-${{ steps.timestamp.outputs.timestamp }}
 
-      # 9. Deploy report
+      # 10. Deploy report
       - name: Deploy Allure report to GitHub Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./allure-report
+          publish_dir: ./allure-report-${{ steps.timestamp.outputs.timestamp }}
           force_orphan: true
           keep_files: false
 
-      # 10. Print Allure report link
+      # 11. Print Allure report link
       - name: Show Allure Report Link
         if: always()
         run: |
-          echo "Here is your report: https://MajaTrajkovska.github.io/bookstore-api-tests/"
-          echo "Here is your report: https://MajaTrajkovska.github.io/bookstore-api-tests/" >> $GITHUB_STEP_SUMMARY
+          echo "Here is your report: https://MajaTrajkovska.github.io/bookstore-api-tests/?cachebuster=${{ steps.timestamp.outputs.timestamp }}"
+          echo "Here is your report: https://MajaTrajkovska.github.io/bookstore-api-tests/?cachebuster=${{ steps.timestamp.outputs.timestamp }}" >> $GITHUB_STEP_SUMMARY
 
   # -----------------------------------------
   # JOB 2: Manual run with tags (workflow_dispatch)
