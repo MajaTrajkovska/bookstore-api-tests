@@ -30,8 +30,8 @@ jobs:
   # ===================================================
   # JOB 1 - Run full test suite on push to main
   # ===================================================
-    run-all-tests:
-    name: Run All Tests -Push/PR
+  run-all-tests:
+    name: Run All Tests - Push/PR
     runs-on: ubuntu-latest
     
 
@@ -96,7 +96,7 @@ jobs:
   # -----------------------------------------
   # JOB 2: Manual run with tags (workflow_dispatch)
   # -----------------------------------------
-    run-tagged-tests:
+  run-tagged-tests:
     name: Run Tagged Tests - Manual Dispatch
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'workflow_dispatch' }}
@@ -154,7 +154,7 @@ jobs:
   # -----------------------------------------
   # JOB 3: Nightly job (2 AM UTC full tests)
   # -----------------------------------------
-    nightly-run:
+  nightly-run:
     name: Nightly Run - All Tests
     runs-on: ubuntu-latest
     if: ${{ github.event_name == 'schedule' }}
