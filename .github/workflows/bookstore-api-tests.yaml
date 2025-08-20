@@ -142,7 +142,7 @@ jobs:
   # ===================================================
   # JOB 3 - Scheduled nightly job
   # ===================================================
-  nightly-tests:
+    nightly-tests:
     if: github.event_name == 'schedule'
     runs-on: ubuntu-latest
 
