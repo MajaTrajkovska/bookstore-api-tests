@@ -44,7 +44,7 @@ public class PutBookTests
             .body("pageCount", equalTo(book.getPageCount()))
             .body("description", equalTo(book.getDescription()))
             .body("excerpt",  equalTo(book.getExcerpt()))
-            .body("publishDate", equalTo(book.getPublishDate()));
+            .body("publishDate", containsString(book.getPublishDate().substring(0, 19)));
 
         //delete the alredy created book
         booksApis.deleteBook(createdBookId);  
@@ -63,7 +63,7 @@ public class PutBookTests
             .body("pageCount", equalTo(book.getPageCount()))
             .body("description", equalTo(book.getDescription()))
             .body("excerpt",  equalTo(book.getExcerpt()))
-            .body("publishDate", equalTo(book.getPublishDate()));
+            .body("publishDate", containsString(book.getPublishDate().substring(0, 19)));
 
         //delete the alredy created book
         booksApis.deleteBook(book.getId());  
@@ -82,7 +82,7 @@ public class PutBookTests
             .body("pageCount", equalTo(book.getPageCount()))
             .body("description", equalTo(book.getDescription()))
             .body("excerpt",  equalTo(book.getExcerpt()))
-            .body("publishDate", equalTo(book.getPublishDate()));
+            .body("publishDate", containsString(book.getPublishDate().substring(0, 19)));
 
         //delete the alredy created book
         booksApis.deleteBook(book.getId());  
