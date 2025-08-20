@@ -122,6 +122,10 @@ jobs:
           rm -rf ./allure-results || true
           rm -rf ./allure-report || true
 
+      - name: Set timestamp
+        id: timestamp
+        run: echo "timestamp=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_OUTPUT
+
       - name: Run tagged tests
         run: |
           echo "Running tests with tags: ${{ github.event.inputs.tags }}"
@@ -142,22 +146,22 @@ jobs:
         if: always()
         run: |
           npm install -g allure-commandline --save-dev
-          allure generate ./allure-results --clean -o ./allure-report
+          allure generate ./allure-results --clean -o ./allure-report-${{ steps.timestamp.outputs.timestamp }}
 
       - name: Deploy Allure report to GitHub Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./allure-report
+          publish_dir: ./allure-report-${{ steps.timestamp.outputs.timestamp }}
           force_orphan: true
           keep_files: false
 
       - name: Show Allure Report Link
         if: always()
         run: |
-          echo "Here is your report: https://MajaTrajkovska.github.io/bookstore-api-tests/"
-          echo "Here is your report: https://MajaTrajkovska.github.io/bookstore-api-tests/" >> $GITHUB_STEP_SUMMARY
+          echo "Here is your report: https://MajaTrajkovska.github.io/bookstore-api-tests/?cachebuster=${{ steps.timestamp.outputs.timestamp }}"
+          echo "Here is your report: https://MajaTrajkovska.github.io/bookstore-api-tests/?cachebuster=${{ steps.timestamp.outputs.timestamp }}" >> $GITHUB_STEP_SUMMARY
 
   # -----------------------------------------
   # JOB 3: Nightly job (2 AM UTC full tests)
@@ -182,6 +186,10 @@ jobs:
           rm -rf ./allure-results || true
           rm -rf ./allure-report || true
 
+      - name: Set timestamp
+        id: timestamp
+        run: echo "timestamp=$(date +'%Y%m%d%H%M%S')" >> $GITHUB_OUTPUT
+
       - name: Run nightly full test suite
         run: |
           echo "Running nightly full test suite"
@@ -201,19 +209,19 @@ jobs:
         if: always()
         run: |
           npm install -g allure-commandline --save-dev
-          allure generate ./allure-results --clean -o ./allure-report
+          allure generate ./allure-results --clean -o ./allure-report-${{ steps.timestamp.outputs.timestamp }}
 
       - name: Deploy Allure report to GitHub Pages
         if: always()
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./allure-report
+          publish_dir: ./allure-report-${{ steps.timestamp.outputs.timestamp }}
           force_orphan: true
           keep_files: false
 
       - name: Show Allure Report Link
         if: always()
         run: |
-          echo "Here is your report: https://MajaTrajkovska.github.io/bookstore-api-tests/"
-          echo "Here is your report: https://MajaTrajkovska.github.io/bookstore-api-tests/" >> $GITHUB_STEP_SUMMARY
+          echo "Here is your report: https://MajaTrajkovska.github.io/bookstore-api-tests/?cachebuster=${{ steps.timestamp.outputs.timestamp }}"
+          echo "Here is your report: https://MajaTrajkovska.github.io/bookstore-api-tests/?cachebuster=${{ steps.timestamp.outputs.timestamp }}" >> $GITHUB_STEP_SUMMARY
