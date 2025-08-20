@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 118,
+    &quot;title&quot;: &quot;Edna O&#39;Brien&quot;,
+    &quot;description&quot;: &quot;Quo sit ipsum sit sint vel fuga et necessitatibus eum beatae id minus enim corporis.&quot;,
+    &quot;pageCount&quot;: 993,
+    &quot;excerpt&quot;: &quot;Sed vitae sunt non. Beatae voluptatem molestias et sequi exercitationem quae. Id aut repudiandae placeat asperiores officia.&quot;,
+    &quot;publishDate&quot;: &quot;2025-08-20T14:26:23.538770144&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 118,
+    &quot;title&quot;: &quot;Edna O&#39;Brien&quot;,
+    &quot;description&quot;: &quot;Quo sit ipsum sit sint vel fuga et necessitatibus eum beatae id minus enim corporis.&quot;,
+    &quot;pageCount&quot;: 993,
+    &quot;excerpt&quot;: &quot;Sed vitae sunt non. Beatae voluptatem molestias et sequi exercitationem quae. Id aut repudiandae placeat asperiores officia.&quot;,
+    &quot;publishDate&quot;: &quot;2025-08-20T14:26:23.538770144&quot;
+}&#39;
+</div>
