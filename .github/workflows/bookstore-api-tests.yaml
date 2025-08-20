@@ -33,6 +33,7 @@ jobs:
   run-all-tests:
     name: Run All Tests - Push/PR
     runs-on: ubuntu-latest
+    if: ${{ github.event_name == 'push' || github.event_name == 'pull_request' }}
     
     steps:
       # 1. Checkout repository
@@ -89,15 +90,16 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./allure-report-${{ steps.timestamp.outputs.timestamp }}
-          force_orphan: true
-          keep_files: false
+          destination_dir: all-tests  # Deploy to /all-tests/ subdirectory
+          force_orphan: false  # Don't wipe out the entire gh-pages branch
+          keep_files: true     # Keep other directories
 
       # 11. Print Allure report link
       - name: Show Allure Report Link
         if: always()
         run: |
-          echo "Here is your report: https://MajaTrajkovska.github.io/bookstore-api-tests/?cachebuster=${{ steps.timestamp.outputs.timestamp }}"
-          echo "Here is your report: https://MajaTrajkovska.github.io/bookstore-api-tests/?cachebuster=${{ steps.timestamp.outputs.timestamp }}" >> $GITHUB_STEP_SUMMARY
+          echo "Here is your report: https://MajaTrajkovska.github.io/bookstore-api-tests/all-tests/"
+          echo "Here is your report: https://MajaTrajkovska.github.io/bookstore-api-tests/all-tests/" >> $GITHUB_STEP_SUMMARY
 
   # -----------------------------------------
   # JOB 2: Manual run with tags (workflow_dispatch)
@@ -154,14 +156,15 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./allure-report-${{ steps.timestamp.outputs.timestamp }}
-          force_orphan: true
-          keep_files: false
+          destination_dir: tagged-tests/${{ github.event.inputs.tags }}  # Deploy to /tagged-tests/positive/ etc.
+          force_orphan: false
+          keep_files: true
 
       - name: Show Allure Report Link
         if: always()
         run: |
-          echo "Here is your report: https://MajaTrajkovska.github.io/bookstore-api-tests/?cachebuster=${{ steps.timestamp.outputs.timestamp }}"
-          echo "Here is your report: https://MajaTrajkovska.github.io/bookstore-api-tests/?cachebuster=${{ steps.timestamp.outputs.timestamp }}" >> $GITHUB_STEP_SUMMARY
+          echo "Here is your report: https://MajaTrajkovska.github.io/bookstore-api-tests/tagged-tests/${{ github.event.inputs.tags }}/"
+          echo "Here is your report: https://MajaTrajkovska.github.io/bookstore-api-tests/tagged-tests/${{ github.event.inputs.tags }}/" >> $GITHUB_STEP_SUMMARY
 
   # -----------------------------------------
   # JOB 3: Nightly job (2 AM UTC full tests)
@@ -217,8 +220,9 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./allure-report-${{ steps.timestamp.outputs.timestamp }}
-          force_orphan: true
-          keep_files: false
+          destination_dir: nightly  # Deploy to /nightly/ subdirectory
+          force_orphan: false
+          keep_files: true
 
       - name: Show Allure Report Link
         if: always()
