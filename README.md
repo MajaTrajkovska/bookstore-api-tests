@@ -73,7 +73,7 @@ mvn clean install
 
 **Run all tests:**
 ```sh
-mvn clean test
+mvn clean install -DskipTests
 ```
 
 **Run only tests with a specific JUnit 5 tag (e.g., "positive"):**
@@ -201,8 +201,9 @@ Check network connectivity if tests fail with connection errors
 Make sure the container is still running when using docker cp to copy results
 
 ## 10. Test Results
-Currently few tests are failing but that is expected. In the files with the tests is given a detailed explanation why those tests are expected to fail. 
-The issue is not into the test code, but those are because of some limitations/defects with tehe fake API. 
-For example: 
-There is no logic to be able to delete an author with non-existing ID, but the fake API is returning 200OK. This test case is EXPECTED TO FAIL because the API should not allow deletion of an author that does not exist in the DB.
+
+Some tests are expected to fail due to known limitations or defects in the fake API, not because of issues in the test code itself. Each test file includes detailed comments explaining the reasons for these failures. 
+
+For example:  
+Attempting to delete an author with a non-existing ID should result in an error, but the fake API incorrectly returns a 200 OK response. This is a known issue, and such tests are marked as EXPECTED TO FAIL.
 
