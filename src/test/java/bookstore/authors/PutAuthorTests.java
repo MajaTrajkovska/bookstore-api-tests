@@ -13,14 +13,24 @@ import com.example.bookstoreapi.data.AuthorDataFactory;
 import com.example.bookstoreapi.model.Author;
 
 /**
- * API tests for PUT books.
+ * Test class for API PUT author endpoint.
+ * <p>
+ * Contains positive, negative, and edge-case tests for updating authors via the API.
+ * <ul>
+ *   <li>Positive tests verify successful update with valid and some missing data.</li>
+ *   <li>Negative tests cover invalid, missing, null, and edge-case IDs.</li>
+ * </ul>
+ * <p>
+ * Comments above each test method describe the expected behavior and any known issues with the fake API.
  */
 public class PutAuthorTests 
 {
     private AuthorsApis authorsApi;
     int createdAuthorId;
 
-    
+    /**
+     * Initializes the AuthorsApis instance before each test and creates a random author for update tests.
+     */
     @BeforeEach
     public void setup() {
        authorsApi = new AuthorsApis();
@@ -33,7 +43,10 @@ public class PutAuthorTests
             .path("id");
     }
 
-
+    /**
+     * Positive test: Update an author with valid data.
+     * Verifies that the API returns status code 200 and correct author data.
+     */
     @Test
     @Tag("positive")
     @DisplayName("Update an author with valid data")
@@ -50,6 +63,11 @@ public class PutAuthorTests
         authorsApi.deleteAuthor(createdAuthorId);  
     }
 
+    /**
+     * Positive test: Update author with empty first name.
+     * Let's assume that the first name is not mandatory field. In this case, the API is returning 200OK.
+     * Verifies that the API returns status code 200 and correct author data.
+     */
     @Test
     @Tag("positive")
     @DisplayName("Update author with empty first name")
@@ -66,6 +84,11 @@ public class PutAuthorTests
         authorsApi.deleteAuthor(createdAuthorId);               
     }
 
+    /**
+     * Positive test: Update author with empty last name.
+     * Let's assume that the last name is not mandatory field. In this case, the API is returning 200OK.
+     * Verifies that the API returns status code 200 and correct author data.
+     */
     @Test
     @Tag("positive")
     @DisplayName("Update author with empty last name")
@@ -82,6 +105,10 @@ public class PutAuthorTests
         authorsApi.deleteAuthor(createdAuthorId);
     }
 
+    /**
+     * Negative test: Update an author with null id.
+     * Verifies that the API returns status code 400 and a validation error.
+     */
     @Test
     @Tag("negative")
     @DisplayName("Update an author with null id")
@@ -93,7 +120,11 @@ public class PutAuthorTests
             .body("title", equalTo("One or more validation errors occurred."));
     }
 
-    // We assume that the book ID is a mandatory field, so this test case is EXPECTED TO FAIL.
+    /**
+     * Negative test: Update an author with empty book id.
+     * We assume that the book ID is a mandatory field, so this test case is EXPECTED TO FAIL.
+     * Verifies that the API returns status code 400 and a validation error.
+     */
     @Test
     @Tag("negative")
     @DisplayName("Update an author with empty book id")
@@ -105,8 +136,12 @@ public class PutAuthorTests
             .body("title", equalTo("One or more validation errors occurred."));
     }
 
-    // If we imagine that the ID must be higher than 0, then this test case is negative.
-    // Leaded by this fact, this test case is EXPECTED TO FAIL!
+    /**
+     * Negative test: Update an author with negative ID.
+     * If we imagine that the ID must be higher than 0, then this test case is negative.
+     * Leaded by this fact, this test case is EXPECTED TO FAIL!
+     * Verifies that the API returns status code 400 and a validation error.
+     */
     @Test
     @Tag("negative")
     @DisplayName("Update an author with negative ID")
@@ -119,4 +154,3 @@ public class PutAuthorTests
     }
 
 }
-

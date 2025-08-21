@@ -12,13 +12,21 @@ import com.example.bookstoreapi.data.BookDataFactory;
 import com.example.bookstoreapi.model.Book;
 
 /**
- * API tests for GET books.
+ * Test class for API GET book endpoint.
+ * <p>
+ * Contains positive, negative, and edge-case tests for retrieving books via the API.
+ * <ul>
+ *   <li>Positive tests verify successful retrieval with valid data and formats.</li>
+ *   <li>Negative tests cover invalid, non-existing, null, and malformed IDs.</li>
+ *   <li>Edge tests cover boundary values such as maximum and minimum integer IDs.</li>
+ * </ul>
+ * <p>
+ * Comments above each test method describe the expected behavior and any known issues with the fake API.
  */
 public class GetBookTests 
 {
     private BooksApis booksApis;
     
-
     private int nonExistingId = 777777; // Example of a non-existing ID. The valid ID range is between 1 and 200.
     private int validIdWithExtraZeros = 0001;  //Example of a valid ID with few extra zeros upfront.
     private int idAboveMaxId = 201; // Example of a current maximum ID that should not be valid.
@@ -29,11 +37,18 @@ public class GetBookTests
     private int maxIntegerId = Integer.MAX_VALUE; // Example of a maximum integer ID that should not be valid.
     private int minIntegerId = Integer.MIN_VALUE; // Example of a minimum integer ID that should not be valid.
     
+    /**
+     * Initializes the BooksApis instance before each test.
+     */
     @BeforeEach
     public void setup() {
        booksApis = new BooksApis();
     }
 
+    /**
+     * Positive test: Get all books.
+     * Verifies that the API returns a list of books with status code 200 and a non-empty response.
+     */
     @Test
     @Tag("positive")
     @DisplayName("Test getting all books")
@@ -44,6 +59,10 @@ public class GetBookTests
             .body("size()", greaterThan(0));
     }
 
+    /**
+     * Positive test: Get a book by existing ID.
+     * Creates a random book, retrieves it by ID, and verifies the response status code and returned ID.
+     */
     @Test
     @Tag("positive")
     @DisplayName("Test getting a book by existing ID")
@@ -63,6 +82,10 @@ public class GetBookTests
             .body("id", equalTo(createdBookId));
     }
 
+    /**
+     * Positive test: Get a book by existing ID with extra zeros upfront.
+     * Verifies that the API returns status code 200 for a valid ID with leading zeros.
+     */
     @Test
     @Tag("positive")
     @DisplayName("Test getting a book using an existing id but written with few more zeros upfront")
@@ -72,6 +95,10 @@ public class GetBookTests
             .statusCode(200);
     }
 
+    /**
+     * Negative test: Get a book by ID above the maximum allowed.
+     * Verifies that the API returns status code 404 and "Not Found" for an ID above the valid range.
+     */
     @Test
     @Tag("negative")
     @DisplayName("Test getting a book by id that is above the maxID")
@@ -82,6 +109,10 @@ public class GetBookTests
             .body("title", equalTo("Not Found"));
     }
 
+    /**
+     * Negative test: Get a book by non-existing ID.
+     * Verifies that the API returns status code 404 and "Not Found" for a non-existing book ID.
+     */
     @Test
     @Tag("negative")
     @DisplayName("Test getting a book by a non-existing ID")
@@ -92,7 +123,11 @@ public class GetBookTests
             .body("title", equalTo("Not Found"));
     }
 
-    // If we imagine that the ID must be higher than 0, then this test case is negative.
+    /**
+     * Negative test: Get a book by negative ID.
+     * If we imagine that the ID must be higher than 0, then this test case is negative.
+     * Verifies that the API returns status code 404 and "Not Found" for a negative ID.
+     */
     @Test
     @Tag("negative")
     @DisplayName("Test getting a book using a negative ID")
@@ -103,7 +138,10 @@ public class GetBookTests
             .body("title", equalTo("Not Found"));
     }
 
-
+    /**
+     * Negative test: Get a book by alphanumeric ID.
+     * Verifies that the API returns status code 400 for an alphanumeric ID.
+     */
     @Test
     @Tag("negative")
     @DisplayName("Test getting a book by alphanumeric id")
@@ -113,6 +151,10 @@ public class GetBookTests
             .statusCode(400);
     }     
 
+    /**
+     * Negative test: Get a book by special sign ID.
+     * Verifies that the API returns status code 400 for a special sign ID.
+     */
     @Test
     @Tag("negative")
     @DisplayName("Test getting a book using a special sign")
@@ -122,6 +164,10 @@ public class GetBookTests
             .statusCode(400);
     }
 
+    /**
+     * Negative test: Get a book by null ID.
+     * Verifies that the API returns status code 400 for a null ID.
+     */
     @Test
     @Tag("negative")
     @DisplayName("Test getting a book using a null id")
@@ -131,6 +177,10 @@ public class GetBookTests
             .statusCode(400);
     }
 
+    /**
+     * Edge test: Get a book by maximum integer ID.
+     * Verifies that the API returns status code 404 and "Not Found" for the maximum integer ID.
+     */
     @Test
     @Tag("edge")
     @DisplayName("Test getting a book using a maximum integer id")
@@ -141,6 +191,10 @@ public class GetBookTests
             .body("title", equalTo("Not Found"));
     }
 
+    /**
+     * Edge test: Get a book by minimum integer ID.
+     * Verifies that the API returns status code 404 and "Not Found" for the minimum integer ID.
+     */
     @Test
     @Tag("edge")
     @DisplayName("Test getting a book using a minimum integer id")

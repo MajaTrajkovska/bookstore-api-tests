@@ -14,8 +14,18 @@ import com.example.bookstoreapi.data.AuthorDataFactory;
 import com.example.bookstoreapi.model.Author;
 
 /**
- * API tests for DELETE author.
+ * Test class for API DELETE author endpoint.
+ * <p>
+ * Contains positive, negative, and edge-case tests for deleting authors via the API.
+ * <ul>
+ *   <li>Positive tests verify successful deletion with valid data and formats.</li>
+ *   <li>Negative tests cover invalid, non-existing, null, and malformed IDs.</li>
+ *   <li>Edge tests cover boundary values such as maximum and minimum integer IDs.</li>
+ * </ul>
+ * <p>
+ * Comments above each test method describe the expected behavior and any known issues with the fake API.
  */
+
 public class DeleteAuthorTests 
 {
     private AuthorsApis authorsApi;
@@ -32,12 +42,18 @@ public class DeleteAuthorTests
     private int maxIntegerId = Integer.MAX_VALUE; // Example of a maximum integer ID that should not be valid.
     private int minIntegerId = Integer.MIN_VALUE; // Example of a minimum integer ID that should not be valid.
 
-    
+    /**
+     * Initializes the AuthorsApis instance before each test.
+     */
     @BeforeEach
     public void setup() {
        authorsApi = new AuthorsApis();
     }
 
+    /**
+     * Positive test: Delete a book with valid data.
+     * Creates a random author, deletes it, and expects a 200 status code.
+     */
     @Test
     @Tag("positive")
     @DisplayName("Delete a book with valid data")
@@ -53,6 +69,10 @@ public class DeleteAuthorTests
             .statusCode(200);  
     }
 
+    /**
+     * Positive test: Delete a book with ID with extra zeros upfront.
+     * Expects a 200 status code.
+     */
     @Test
     @Tag("positive")
     @DisplayName("Delete a book with ID with extra zeros upfront")
@@ -62,8 +82,10 @@ public class DeleteAuthorTests
             .statusCode(200);
     }
 
-    // There is no logic to be able to delete an author with non-existing ID, but the fake API is returning 200OK.
-    // This test case is EXPECTED TO FAIL because the API should not allow deletion of an author that does not exist in the DB.
+    /**
+     * Negative test: Delete a book with non-existing ID.
+     * This test is EXPECTED TO FAIL because the API should not allow deletion of a non-existing author.
+     */
     @Test
     @Tag("negative")
     @DisplayName("Delete a book with non-existing ID")
@@ -74,8 +96,10 @@ public class DeleteAuthorTests
             .body("title", equalTo("One or more validation errors occurred."));
     }
 
-    // There is no logic to be able to delete an author with ith ID above maximum (non-existing ID), but the fake API is returning 200OK.
-    // This test case is EXPECTED TO FAIL because the API should not allow deletion of an author that does not exist in the DB.
+    /**
+     * Edge test: Delete a book with ID above maximum.
+     * This test is EXPECTED TO FAIL because the API should not allow deletion of a non-existing author.
+     */
     @Test
     @Tag("edge")
     @DisplayName("Delete a book with ID above maximum")
@@ -86,6 +110,10 @@ public class DeleteAuthorTests
             .body("title", equalTo("Not Found"));
     }
 
+    /**
+     * Negative test: Delete a book with alphanumeric ID.
+     * Expects a 400 status code and validation error.
+     */
     @Test
     @Tag("negative")
     @DisplayName("Delete a book with alphanumeric ID")
@@ -96,6 +124,10 @@ public class DeleteAuthorTests
             .body("title", equalTo("One or more validation errors occurred."));
     }
 
+    /**
+     * Negative test: Delete a book with special sign ID.
+     * Expects a 400 status code and validation error.
+     */
     @Test
     @Tag("negative")
     @DisplayName("Delete a book with special sign ID")
@@ -106,8 +138,10 @@ public class DeleteAuthorTests
             .body("title", equalTo("One or more validation errors occurred."));
     }
 
-    // There is no logic to be able to delete an author with negative ID, but the fake API is returning 200OK.
-    // This test case is EXPECTED TO FAIL because the API should not allow deletion of an author that does not exist in the DB with a negative ID.
+    /**
+     * Negative test: Delete a book with negative ID.
+     * This test is EXPECTED TO FAIL because the API should not allow deletion of a non-existing author with a negative ID.
+     */
     @Test
     @Tag("negative")
     @DisplayName("Delete a book with negative ID")
@@ -118,6 +152,10 @@ public class DeleteAuthorTests
             .body("title", equalTo("One or more validation errors occurred."));
     }
 
+    /**
+     * Negative test: Delete a book with null ID.
+     * Expects a 400 status code and validation error.
+     */
     @Test
     @Tag("negative")
     @DisplayName("Delete a book with null ID")
@@ -128,8 +166,10 @@ public class DeleteAuthorTests
             .body("title", equalTo("One or more validation errors occurred."));
     }
 
-    // There is no logic to be able to delete an author with maximum integer ID when it does not exist at all, but the fake API is returning 200OK.
-    // This test case is EXPECTED TO FAIL because the API should not allow deletion of an author that does not exist in the DB with that ID.
+    /**
+     * Edge test: Delete a book with maximum integer ID.
+     * This test is EXPECTED TO FAIL because the API should not allow deletion of a non-existing author with that ID.
+     */
     @Test
     @Tag("edge")
     @DisplayName("Delete a book with maximum integer ID")
@@ -140,8 +180,10 @@ public class DeleteAuthorTests
             .body("title", equalTo("Not Found"));
     }
 
-    // There is no logic to be able to delete an author with minimum integer ID when it does not exist at all, but the fake API is returning 200OK.
-    // This test case is EXPECTED TO FAIL because the API should not allow deletion of an author that does not exist in the DB with that ID.
+    /**
+     * Edge test: Delete a book with minimum integer ID.
+     * This test is EXPECTED TO FAIL because the API should not allow deletion of a non-existing author with that ID.
+     */
     @Test
     @Tag("edge")
     @DisplayName("Delete a book with minimum integer ID")

@@ -12,7 +12,16 @@ import com.example.bookstoreapi.data.BookDataFactory;
 import com.example.bookstoreapi.model.Book;
 
 /**
- * API tests for DELETE books.
+ * Test class for API DELETE book endpoint.
+ * <p>
+ * Contains positive, negative, and edge-case tests for deleting books via the API.
+ * <ul>
+ *   <li>Positive tests verify successful deletion with valid data and formats.</li>
+ *   <li>Negative tests cover invalid, non-existing, null, and malformed IDs.</li>
+ *   <li>Edge tests cover boundary values such as maximum and minimum integer IDs.</li>
+ * </ul>
+ * <p>
+ * Comments above each test method describe the expected behavior and any known issues with the fake API.
  */
 public class DeleteBookTests 
 {
@@ -26,16 +35,21 @@ public class DeleteBookTests
     private int maxIntegerId = Integer.MAX_VALUE; // Example of a maximum integer ID that should not be valid.
     private int minIntegerId = Integer.MIN_VALUE; // Example of a minimum integer ID that should not be valid.
 
-
     private BooksApis booksApis;
     int createdBookId;
     
+    /**
+     * Initializes the BooksApis instance before each test.
+     */
     @BeforeEach
     public void setup() {
        booksApis = new BooksApis();
     }
 
-
+    /**
+     * Positive test: Delete a book with valid data.
+     * Creates a random book, deletes it, and expects a 200 status code.
+     */
     @Test
     @Tag("positive")
     @DisplayName("Delete a book with valid data")
@@ -51,6 +65,10 @@ public class DeleteBookTests
             .statusCode(200);  
     }
 
+    /**
+     * Positive test: Delete a book with ID with extra zeros upfront.
+     * Expects a 200 status code.
+     */
     @Test
     @Tag("positive")
     @DisplayName("Delete a book with ID with extra zeros upfront")
@@ -60,9 +78,11 @@ public class DeleteBookTests
             .statusCode(200);
     }
 
-
-    // There is no logic to be able to delete a book with non-existing ID, but the fake API is returning 200OK.
-    // This test case is EXPECTED TO FAIL because the API should not allow deletion of a book that does not exist in the DB.
+    /**
+     * Negative test: Delete a book with non-existing ID.
+     * There is no logic to be able to delete a book with non-existing ID, but the fake API is returning 200OK.
+     * This test case is EXPECTED TO FAIL because the API should not allow deletion of a book that does not exist in the DB.
+     */
     @Test
     @Tag("negative")
     @DisplayName("Delete a book with non-existing ID")
@@ -73,6 +93,10 @@ public class DeleteBookTests
             .body("title", equalTo("One or more validation errors occurred."));
     }
 
+    /**
+     * Negative test: Delete a book with alphanumeric ID.
+     * Expects a 400 status code and validation error.
+     */
     @Test
     @Tag("negative")
     @DisplayName("Delete a book with alphanumeric ID")
@@ -83,6 +107,10 @@ public class DeleteBookTests
             .body("title", equalTo("One or more validation errors occurred."));
     }
 
+    /**
+     * Negative test: Delete a book with special sign ID.
+     * Expects a 400 status code and validation error.
+     */
     @Test
     @Tag("negative")
     @DisplayName("Delete a book with special sign ID")
@@ -93,9 +121,11 @@ public class DeleteBookTests
             .body("title", equalTo("One or more validation errors occurred."));
     }
 
-
-    // There is no logic to be able to delete a book with negative ID, but the fake API is returning 200OK.
-    // This test case is EXPECTED TO FAIL because the API should not allow deletion of a book that does not exist in the DB with a negative ID.
+    /**
+     * Negative test: Delete a book with negative ID.
+     * There is no logic to be able to delete a book with negative ID, but the fake API is returning 200OK.
+     * This test case is EXPECTED TO FAIL because the API should not allow deletion of a book that does not exist in the DB with a negative ID.
+     */
     @Test
     @Tag("negative")
     @DisplayName("Delete a book with negative ID")
@@ -106,7 +136,10 @@ public class DeleteBookTests
             .body("title", equalTo("One or more validation errors occurred."));
     }
 
-
+    /**
+     * Negative test: Delete a book with null ID.
+     * Expects a 400 status code and validation error.
+     */
     @Test
     @Tag("negative")
     @DisplayName("Delete a book with null ID")
@@ -117,8 +150,11 @@ public class DeleteBookTests
             .body("title", equalTo("One or more validation errors occurred."));
     }
 
-    // There is no logic to be able to delete a book with maxInteger ID when it does not exist at all, but the fake API is returning 200OK.
-    // This test case is EXPECTED TO FAIL because the API should not allow deletion of a book that does not exist in the DB with that ID.
+    /**
+     * Edge test: Delete a book with maximum integer ID.
+     * There is no logic to be able to delete a book with maxInteger ID when it does not exist at all, but the fake API is returning 200OK.
+     * This test case is EXPECTED TO FAIL because the API should not allow deletion of a book that does not exist in the DB with that ID.
+     */
     @Test
     @Tag("edge")
     @DisplayName("Delete a book with maximum integer ID")
@@ -129,8 +165,11 @@ public class DeleteBookTests
             .body("title", equalTo("Not Found"));
     }
 
-    // There is no logic to be able to delete a book with minInteger ID when it does not exist at all, but the fake API is returning 200OK.
-    // This test case is EXPECTED TO FAIL because the API should not allow deletion of a book that does not exist in the DB with that ID.
+    /**
+     * Edge test: Delete a book with minimum integer ID.
+     * There is no logic to be able to delete a book with minInteger ID when it does not exist at all, but the fake API is returning 200OK.
+     * This test case is EXPECTED TO FAIL because the API should not allow deletion of a book that does not exist in the DB with that ID.
+     */
     @Test
     @Tag("edge")
     @DisplayName("Delete a book with minimum integer ID")
@@ -142,4 +181,3 @@ public class DeleteBookTests
     }
 
 }
-

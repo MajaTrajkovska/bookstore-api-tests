@@ -11,29 +11,6 @@
 
     <build>
         <plugins>
-
-            <!-- Run tests, allow filtering by tags, and enable Allure listener -->
-            <!-- <plugin>
-               <groupId>org.apache.maven.plugins</groupId>
-               <artifactId>maven-surefire-plugin</artifactId>
-               <version>3.2.5</version>
-               <configuration>
-                   <useModulePath>false</useModulePath>
-                   <properties>
-                      <property>
-                        <name>junit.jupiter.tags</name>
-                        <value>${junit.jupiter.tags}</value>
-                      </property>
-                    <property>
-                        <name>junit.jupiter.extensions.autodetection.enabled</name>
-                        <value>true</value>
-                    </property>
-                   </properties>
-        <systemPropertyVariables>
-            <allure.results.directory>target/allure-results</allure.results.directory>
-        </systemPropertyVariables>
-    </configuration>
-</plugin> -->
 <plugin>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-surefire-plugin</artifactId>

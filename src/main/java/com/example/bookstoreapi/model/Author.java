@@ -13,13 +13,6 @@ public class Author {
         this.firstName = firstName;
         this.lastName = lastName;
     }
-    // // Constructor without ID for creating new book without id so I can test the negative scenario for creatiing a book without mandatory field
-    // public Book(String title, String description, int pageCount, String excerpt, String publishDate) {
-    // this.title = title;
-    // this.description = description;
-    // this.pageCount = pageCount;
-    // this.excerpt = excerpt;
-    // this.publishDate = publishDate;
 
     /**
     * Getters and Setters
