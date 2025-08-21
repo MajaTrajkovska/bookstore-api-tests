@@ -63,7 +63,7 @@ bookstore-api-tests/
 ```sh
 git clone https://github.com/MajaTrajkovska/bookstore-api-tests.git
 cd bookstore-api-tests
-mvn clean install
+mvn clean install -DskipTests
 ```
 **Install prerequisites**
 
@@ -73,7 +73,7 @@ mvn clean install
 
 **Run all tests:**
 ```sh
-mvn clean install -DskipTests
+mvn clean test
 ```
 
 **Run only tests with a specific JUnit 5 tag (e.g., "positive"):**
