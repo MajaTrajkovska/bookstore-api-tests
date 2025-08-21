@@ -78,7 +78,7 @@ public class PostBookTests
     }
 
     // There is no logic to be able to create a book without title, but the fake API is returning 200OK.
-    // The title should be a mandatory field as the data and  the page number.
+    // The title should be a mandatory field as the data and the page number.
     // This test case is EXPECTED TO FAIL because the API should not allow a book without title.
     @Test
     @Tag("positive")
