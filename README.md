@@ -1,4 +1,4 @@
-Bookstore API Test Automation 📚
+# Bookstore API Test Automation 📚
 
 This project contains automated API tests for the Bookstore API using REST Assured, JUnit 5, Maven, Docker, and Allure Reporting.
 
@@ -173,23 +173,23 @@ In this project, it is used to host Allure HTML reports online for easy access a
 ## 8. 📝 Example Workflows
 Complete Test Cycle with Docker
 
-**Build the Docker image**
+**-Build the Docker image:**
 docker build -t bookstore-api-tests .
 
-**Run positive tests**
+**-Run positive tests:**
 docker run --name bookstore-tests -e TAGS=positive bookstore-api-tests
 
-**Delete the old results**
+**-Delete the old results:**
 Remove-Item -Recurse -Force .\target\allure-results\* (for Windows powershell)
 rm -rf ./target/allure-results/* (for MacOS/Linux schell)
 
-**Copy the results**
+**-Copy the results:**
 docker cp bookstore-tests:/app/target/allure-results ./target/
 
-**Generate and view the report**
+**-Generate and view the report:**
 allure serve target/allure-results
 
-**Clean up the container**
+**-Clean up the container:**
 docker rm bookstore-tests
 
 
