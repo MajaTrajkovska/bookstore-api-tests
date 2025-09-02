@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 171,
+    &quot;title&quot;: &quot;From Here to Eternity&quot;,
+    &quot;description&quot;: &quot;Ratione ea maxime tempore sunt quia cumque libero totam sed aspernatur qui odio eos officiis.&quot;,
+    &quot;pageCount&quot;: 714,
+    &quot;excerpt&quot;: &quot;Quod cupiditate voluptates culpa aut aliquam quasi molestiae. Omnis rerum optio earum quam beatae necessitatibus doloremque. Quia ad rem doloremque recusandae eligendi. Necessitatibus officiis est.&quot;,
+    &quot;publishDate&quot;: &quot;08/15/2023&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 171,
+    &quot;title&quot;: &quot;From Here to Eternity&quot;,
+    &quot;description&quot;: &quot;Ratione ea maxime tempore sunt quia cumque libero totam sed aspernatur qui odio eos officiis.&quot;,
+    &quot;pageCount&quot;: 714,
+    &quot;excerpt&quot;: &quot;Quod cupiditate voluptates culpa aut aliquam quasi molestiae. Omnis rerum optio earum quam beatae necessitatibus doloremque. Quia ad rem doloremque recusandae eligendi. Necessitatibus officiis est.&quot;,
+    &quot;publishDate&quot;: &quot;08/15/2023&quot;
+}&#39;
+</div>
