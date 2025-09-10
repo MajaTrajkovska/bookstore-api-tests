@@ -1,0 +1,34 @@
+<div>PUT to https://fakerestapi.azurewebsites.net/api/v1/Books/50</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 11,
+    &quot;title&quot;: &quot;Time of our Darkness&quot;,
+    &quot;description&quot;: &quot;Doloremque et unde voluptas voluptatum voluptas deleniti sint eos quia tenetur suscipit.&quot;,
+    &quot;pageCount&quot;: 98,
+    &quot;excerpt&quot;: &quot;Cumque quam aliquam nisi impedit. Ut et expedita magnam et aperiam nemo repudiandae. Ipsa animi dolorem. Non ut ea est quo.&quot;,
+    &quot;publishDate&quot;: &quot;08/15/2023&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X PUT &#39;https://fakerestapi.azurewebsites.net/api/v1/Books/50&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 11,
+    &quot;title&quot;: &quot;Time of our Darkness&quot;,
+    &quot;description&quot;: &quot;Doloremque et unde voluptas voluptatum voluptas deleniti sint eos quia tenetur suscipit.&quot;,
+    &quot;pageCount&quot;: 98,
+    &quot;excerpt&quot;: &quot;Cumque quam aliquam nisi impedit. Ut et expedita magnam et aperiam nemo repudiandae. Ipsa animi dolorem. Non ut ea est quo.&quot;,
+    &quot;publishDate&quot;: &quot;08/15/2023&quot;
+}&#39;
+</div>
