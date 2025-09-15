@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 189,
+    &quot;title&quot;: &quot;Beneath the Bleeding&quot;,
+    &quot;description&quot;: &quot;Ut voluptatum a voluptatem voluptas debitis laudantium ipsa in optio deleniti.&quot;,
+    &quot;pageCount&quot;: 596,
+    &quot;excerpt&quot;: &quot;Sint fugiat quaerat et. Laboriosam hic quia facilis. Et et beatae quia occaecati. Dolore alias voluptatum.&quot;,
+    &quot;publishDate&quot;: &quot;2025-09-15T03:47:45.544628736&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 189,
+    &quot;title&quot;: &quot;Beneath the Bleeding&quot;,
+    &quot;description&quot;: &quot;Ut voluptatum a voluptatem voluptas debitis laudantium ipsa in optio deleniti.&quot;,
+    &quot;pageCount&quot;: 596,
+    &quot;excerpt&quot;: &quot;Sint fugiat quaerat et. Laboriosam hic quia facilis. Et et beatae quia occaecati. Dolore alias voluptatum.&quot;,
+    &quot;publishDate&quot;: &quot;2025-09-15T03:47:45.544628736&quot;
+}&#39;
+</div>
