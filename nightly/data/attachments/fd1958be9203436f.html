@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 48,
+    &quot;title&quot;: &quot;Fame Is the Spur&quot;,
+    &quot;description&quot;: &quot;Delectus qui iste voluptatem aliquam provident fugiat et eaque non rerum.&quot;,
+    &quot;pageCount&quot;: 154,
+    &quot;excerpt&quot;: &quot;Libero autem fugit vel. Quidem voluptates voluptatum optio sint architecto autem. Maxime eum molestiae tempore.&quot;,
+    &quot;publishDate&quot;: &quot;2025-09-16T02:57:09.349147263&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 48,
+    &quot;title&quot;: &quot;Fame Is the Spur&quot;,
+    &quot;description&quot;: &quot;Delectus qui iste voluptatem aliquam provident fugiat et eaque non rerum.&quot;,
+    &quot;pageCount&quot;: 154,
+    &quot;excerpt&quot;: &quot;Libero autem fugit vel. Quidem voluptates voluptatum optio sint architecto autem. Maxime eum molestiae tempore.&quot;,
+    &quot;publishDate&quot;: &quot;2025-09-16T02:57:09.349147263&quot;
+}&#39;
+</div>
