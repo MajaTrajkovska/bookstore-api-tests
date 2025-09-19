@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 165,
+    &quot;title&quot;: &quot;The Millstone&quot;,
+    &quot;description&quot;: &quot;Eos doloremque non magni natus commodi natus occaecati magnam quia est error voluptatem explicabo eveniet.&quot;,
+    &quot;pageCount&quot;: 667,
+    &quot;excerpt&quot;: &quot;Illo voluptatum quis temporibus ut. Perspiciatis sit ut temporibus enim earum saepe. Atque non non repellat. Et saepe qui doloremque voluptas iusto. Suscipit aspernatur quia.&quot;,
+    &quot;publishDate&quot;: &quot;08/15/2023&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 165,
+    &quot;title&quot;: &quot;The Millstone&quot;,
+    &quot;description&quot;: &quot;Eos doloremque non magni natus commodi natus occaecati magnam quia est error voluptatem explicabo eveniet.&quot;,
+    &quot;pageCount&quot;: 667,
+    &quot;excerpt&quot;: &quot;Illo voluptatum quis temporibus ut. Perspiciatis sit ut temporibus enim earum saepe. Atque non non repellat. Et saepe qui doloremque voluptas iusto. Suscipit aspernatur quia.&quot;,
+    &quot;publishDate&quot;: &quot;08/15/2023&quot;
+}&#39;
+</div>
