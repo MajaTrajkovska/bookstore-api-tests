@@ -1,0 +1,34 @@
+<div>PUT to https://fakerestapi.azurewebsites.net/api/v1/Books/20</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 133,
+    &quot;title&quot;: &quot;Dance Dance Dance&quot;,
+    &quot;description&quot;: &quot;Et quia eos nesciunt voluptas ea aliquid enim incidunt est et.&quot;,
+    &quot;pageCount&quot;: 171,
+    &quot;excerpt&quot;: &quot;Laboriosam et et repellat qui magnam harum. Magnam nihil ut nostrum sit. Laborum consequatur ex perferendis ab totam molestias labore.&quot;,
+    &quot;publishDate&quot;: null
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X PUT &#39;https://fakerestapi.azurewebsites.net/api/v1/Books/20&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 133,
+    &quot;title&quot;: &quot;Dance Dance Dance&quot;,
+    &quot;description&quot;: &quot;Et quia eos nesciunt voluptas ea aliquid enim incidunt est et.&quot;,
+    &quot;pageCount&quot;: 171,
+    &quot;excerpt&quot;: &quot;Laboriosam et et repellat qui magnam harum. Magnam nihil ut nostrum sit. Laborum consequatur ex perferendis ab totam molestias labore.&quot;,
+    &quot;publishDate&quot;: null
+}&#39;
+</div>
