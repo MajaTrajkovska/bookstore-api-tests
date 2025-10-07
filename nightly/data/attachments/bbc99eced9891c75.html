@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 104,
+    &quot;title&quot;: &quot;Françoise Sagan&quot;,
+    &quot;description&quot;: &quot;Repellendus necessitatibus commodi saepe consequatur qui assumenda illum eveniet ut.&quot;,
+    &quot;pageCount&quot;: 106,
+    &quot;excerpt&quot;: &quot;Ut modi rerum ipsum. Molestiae dolore pariatur quo eveniet omnis. Iste vel explicabo. Ut natus quae et et ea.&quot;,
+    &quot;publishDate&quot;: &quot;2025-10-07T02:59:16.939157684&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 104,
+    &quot;title&quot;: &quot;Françoise Sagan&quot;,
+    &quot;description&quot;: &quot;Repellendus necessitatibus commodi saepe consequatur qui assumenda illum eveniet ut.&quot;,
+    &quot;pageCount&quot;: 106,
+    &quot;excerpt&quot;: &quot;Ut modi rerum ipsum. Molestiae dolore pariatur quo eveniet omnis. Iste vel explicabo. Ut natus quae et et ea.&quot;,
+    &quot;publishDate&quot;: &quot;2025-10-07T02:59:16.939157684&quot;
+}&#39;
+</div>
