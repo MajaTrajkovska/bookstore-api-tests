@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 52,
+    &quot;title&quot;: &quot;The Parliament of Man&quot;,
+    &quot;description&quot;: &quot;Quidem nihil ducimus sed natus delectus autem et esse molestias sit.&quot;,
+    &quot;pageCount&quot;: 753,
+    &quot;excerpt&quot;: &quot;Voluptates facilis cum et enim eligendi. Cumque accusantium non eum maiores. Inventore fugiat unde aut modi ipsa.&quot;,
+    &quot;publishDate&quot;: &quot;2025-10-15T03:05:43.974303796&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 52,
+    &quot;title&quot;: &quot;The Parliament of Man&quot;,
+    &quot;description&quot;: &quot;Quidem nihil ducimus sed natus delectus autem et esse molestias sit.&quot;,
+    &quot;pageCount&quot;: 753,
+    &quot;excerpt&quot;: &quot;Voluptates facilis cum et enim eligendi. Cumque accusantium non eum maiores. Inventore fugiat unde aut modi ipsa.&quot;,
+    &quot;publishDate&quot;: &quot;2025-10-15T03:05:43.974303796&quot;
+}&#39;
+</div>

@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 38,
+    &quot;title&quot;: &quot;Let Us Now Praise Famous Men&quot;,
+    &quot;description&quot;: &quot;Sapiente labore aut voluptas est cum est dolor facilis possimus porro sunt consequatur.&quot;,
+    &quot;pageCount&quot;: 51,
+    &quot;excerpt&quot;: &quot;Quis ut sit in dolorum voluptates qui labore. Voluptatem id illo et dolorem quia qui. Debitis nisi rem voluptas qui dignissimos et. Omnis esse voluptatem in. Nam dicta aut minus repellendus voluptatum nemo.&quot;,
+    &quot;publishDate&quot;: &quot;08/15/2023&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 38,
+    &quot;title&quot;: &quot;Let Us Now Praise Famous Men&quot;,
+    &quot;description&quot;: &quot;Sapiente labore aut voluptas est cum est dolor facilis possimus porro sunt consequatur.&quot;,
+    &quot;pageCount&quot;: 51,
+    &quot;excerpt&quot;: &quot;Quis ut sit in dolorum voluptates qui labore. Voluptatem id illo et dolorem quia qui. Debitis nisi rem voluptas qui dignissimos et. Omnis esse voluptatem in. Nam dicta aut minus repellendus voluptatum nemo.&quot;,
+    &quot;publishDate&quot;: &quot;08/15/2023&quot;
+}&#39;
+</div>
