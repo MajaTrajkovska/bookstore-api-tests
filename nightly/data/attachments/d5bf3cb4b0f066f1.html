@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 1,
+    &quot;title&quot;: &quot;Surprised by Joy&quot;,
+    &quot;description&quot;: &quot;Laudantium laboriosam autem temporibus reprehenderit corrupti enim aspernatur fuga sint.&quot;,
+    &quot;pageCount&quot;: 450,
+    &quot;excerpt&quot;: &quot;Dolorem provident quos ipsa dolore deleniti at earum. Illo sit cupiditate reprehenderit. Sint itaque iste error libero vitae velit et. Aut consequatur at facere sed. Laborum quos sint cupiditate recusandae.&quot;,
+    &quot;publishDate&quot;: &quot;2025-10-23T03:04:37.079571031&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 1,
+    &quot;title&quot;: &quot;Surprised by Joy&quot;,
+    &quot;description&quot;: &quot;Laudantium laboriosam autem temporibus reprehenderit corrupti enim aspernatur fuga sint.&quot;,
+    &quot;pageCount&quot;: 450,
+    &quot;excerpt&quot;: &quot;Dolorem provident quos ipsa dolore deleniti at earum. Illo sit cupiditate reprehenderit. Sint itaque iste error libero vitae velit et. Aut consequatur at facere sed. Laborum quos sint cupiditate recusandae.&quot;,
+    &quot;publishDate&quot;: &quot;2025-10-23T03:04:37.079571031&quot;
+}&#39;
+</div>
