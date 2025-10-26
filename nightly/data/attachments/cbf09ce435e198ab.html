@@ -1,0 +1,34 @@
+<div>PUT to https://fakerestapi.azurewebsites.net/api/v1/Books/10</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 8,
+    &quot;title&quot;: &quot;Antic Hay&quot;,
+    &quot;description&quot;: &quot;Magnam iusto molestias quibusdam dolor sit quas dolore dicta et eveniet dolor ratione ullam.&quot;,
+    &quot;pageCount&quot;: 321,
+    &quot;excerpt&quot;: &quot;Corporis qui et esse corporis molestiae cupiditate non. Est est enim atque nam rem libero blanditiis. Sit et provident incidunt.&quot;,
+    &quot;publishDate&quot;: &quot;2025-10-26T03:11:17.000273258&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X PUT &#39;https://fakerestapi.azurewebsites.net/api/v1/Books/10&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 8,
+    &quot;title&quot;: &quot;Antic Hay&quot;,
+    &quot;description&quot;: &quot;Magnam iusto molestias quibusdam dolor sit quas dolore dicta et eveniet dolor ratione ullam.&quot;,
+    &quot;pageCount&quot;: 321,
+    &quot;excerpt&quot;: &quot;Corporis qui et esse corporis molestiae cupiditate non. Est est enim atque nam rem libero blanditiis. Sit et provident incidunt.&quot;,
+    &quot;publishDate&quot;: &quot;2025-10-26T03:11:17.000273258&quot;
+}&#39;
+</div>
