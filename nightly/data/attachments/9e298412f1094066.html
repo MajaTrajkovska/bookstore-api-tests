@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 113,
+    &quot;title&quot;: &quot;The Glory and the Dream&quot;,
+    &quot;description&quot;: &quot;Itaque veritatis nemo ipsum et dolorum necessitatibus quae ipsa doloribus et a corporis enim dolores.&quot;,
+    &quot;pageCount&quot;: 607,
+    &quot;excerpt&quot;: &quot;Labore soluta perferendis. Autem autem aut. Maiores id mollitia ipsa nisi dolore nostrum sint. Sunt nihil quia ipsum enim recusandae.&quot;,
+    &quot;publishDate&quot;: &quot;2025-11-18T02:38:07.578619167&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 113,
+    &quot;title&quot;: &quot;The Glory and the Dream&quot;,
+    &quot;description&quot;: &quot;Itaque veritatis nemo ipsum et dolorum necessitatibus quae ipsa doloribus et a corporis enim dolores.&quot;,
+    &quot;pageCount&quot;: 607,
+    &quot;excerpt&quot;: &quot;Labore soluta perferendis. Autem autem aut. Maiores id mollitia ipsa nisi dolore nostrum sint. Sunt nihil quia ipsum enim recusandae.&quot;,
+    &quot;publishDate&quot;: &quot;2025-11-18T02:38:07.578619167&quot;
+}&#39;
+</div>
