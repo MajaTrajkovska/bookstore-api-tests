@@ -1,0 +1,34 @@
+<div>PUT to https://fakerestapi.azurewebsites.net/api/v1/Books/12</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 97,
+    &quot;title&quot;: &quot;Arms and the Man&quot;,
+    &quot;description&quot;: &quot;Exercitationem sit eum sed atque impedit consectetur et ut culpa.&quot;,
+    &quot;pageCount&quot;: 757,
+    &quot;excerpt&quot;: &quot;Delectus voluptatem quibusdam esse consectetur quis sed quis. Porro quos repellat vero aut doloribus officiis. Aliquid natus sint ut qui. Nulla veniam corporis corporis.&quot;,
+    &quot;publishDate&quot;: &quot;08/15/2023&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X PUT &#39;https://fakerestapi.azurewebsites.net/api/v1/Books/12&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 97,
+    &quot;title&quot;: &quot;Arms and the Man&quot;,
+    &quot;description&quot;: &quot;Exercitationem sit eum sed atque impedit consectetur et ut culpa.&quot;,
+    &quot;pageCount&quot;: 757,
+    &quot;excerpt&quot;: &quot;Delectus voluptatem quibusdam esse consectetur quis sed quis. Porro quos repellat vero aut doloribus officiis. Aliquid natus sint ut qui. Nulla veniam corporis corporis.&quot;,
+    &quot;publishDate&quot;: &quot;08/15/2023&quot;
+}&#39;
+</div>
