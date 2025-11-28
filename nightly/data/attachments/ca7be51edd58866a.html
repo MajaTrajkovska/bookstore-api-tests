@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 30,
+    &quot;title&quot;: &quot;A Swiftly Tilting Planet&quot;,
+    &quot;description&quot;: &quot;Aspernatur sapiente sunt omnis consequatur voluptatem repellendus nobis sint inventore distinctio placeat totam.&quot;,
+    &quot;pageCount&quot;: 927,
+    &quot;excerpt&quot;: &quot;Tempora et optio tempore consequatur corporis. Fugit tempore error. Sit earum dolor minus adipisci qui nam eius. A et quo ut. Est et et similique.&quot;,
+    &quot;publishDate&quot;: &quot;2025-11-28T02:36:51.195513267&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 30,
+    &quot;title&quot;: &quot;A Swiftly Tilting Planet&quot;,
+    &quot;description&quot;: &quot;Aspernatur sapiente sunt omnis consequatur voluptatem repellendus nobis sint inventore distinctio placeat totam.&quot;,
+    &quot;pageCount&quot;: 927,
+    &quot;excerpt&quot;: &quot;Tempora et optio tempore consequatur corporis. Fugit tempore error. Sit earum dolor minus adipisci qui nam eius. A et quo ut. Est et et similique.&quot;,
+    &quot;publishDate&quot;: &quot;2025-11-28T02:36:51.195513267&quot;
+}&#39;
+</div>

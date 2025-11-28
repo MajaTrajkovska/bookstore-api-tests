@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 179,
+    &quot;title&quot;: &quot;Nine Coaches Waiting&quot;,
+    &quot;description&quot;: &quot;Facilis rerum similique qui quia vitae harum omnis impedit aut molestiae reprehenderit.&quot;,
+    &quot;pageCount&quot;: 276,
+    &quot;excerpt&quot;: &quot;Veritatis et ex esse porro accusantium et sapiente. Totam reiciendis voluptas. Est dicta quod ex eligendi odit earum.&quot;,
+    &quot;publishDate&quot;: &quot;2025-11-28T02:36:49.544197884&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 179,
+    &quot;title&quot;: &quot;Nine Coaches Waiting&quot;,
+    &quot;description&quot;: &quot;Facilis rerum similique qui quia vitae harum omnis impedit aut molestiae reprehenderit.&quot;,
+    &quot;pageCount&quot;: 276,
+    &quot;excerpt&quot;: &quot;Veritatis et ex esse porro accusantium et sapiente. Totam reiciendis voluptas. Est dicta quod ex eligendi odit earum.&quot;,
+    &quot;publishDate&quot;: &quot;2025-11-28T02:36:49.544197884&quot;
+}&#39;
+</div>
