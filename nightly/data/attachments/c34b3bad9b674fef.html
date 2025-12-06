@@ -1,0 +1,34 @@
+<div>PUT to https://fakerestapi.azurewebsites.net/api/v1/Books/5</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 29,
+    &quot;title&quot;: &quot;Waiting for the Barbarians&quot;,
+    &quot;description&quot;: &quot;Dolore est dicta quos numquam quis eius eum at quia rem ipsum voluptatem.&quot;,
+    &quot;pageCount&quot;: 402,
+    &quot;excerpt&quot;: &quot;Consequatur sapiente unde autem ratione. Autem ab quia debitis nulla iste sapiente quibusdam. Ad eos omnis aliquid. Ratione id repellat iure.&quot;,
+    &quot;publishDate&quot;: null
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X PUT &#39;https://fakerestapi.azurewebsites.net/api/v1/Books/5&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 29,
+    &quot;title&quot;: &quot;Waiting for the Barbarians&quot;,
+    &quot;description&quot;: &quot;Dolore est dicta quos numquam quis eius eum at quia rem ipsum voluptatem.&quot;,
+    &quot;pageCount&quot;: 402,
+    &quot;excerpt&quot;: &quot;Consequatur sapiente unde autem ratione. Autem ab quia debitis nulla iste sapiente quibusdam. Ad eos omnis aliquid. Ratione id repellat iure.&quot;,
+    &quot;publishDate&quot;: null
+}&#39;
+</div>
