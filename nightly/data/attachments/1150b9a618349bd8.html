@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 107,
+    &quot;title&quot;: &quot;Consider the Lilies&quot;,
+    &quot;description&quot;: &quot;Quia ad quam quae aperiam est dolorum dolores sapiente doloribus voluptate minus porro labore.&quot;,
+    &quot;pageCount&quot;: 594,
+    &quot;excerpt&quot;: &quot;Illum a consequatur. Quo iste provident vero. Et aut non consectetur et. Maiores quae optio ea et necessitatibus. Adipisci odio animi.&quot;,
+    &quot;publishDate&quot;: &quot;2025-12-13T02:37:33.237558538&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 107,
+    &quot;title&quot;: &quot;Consider the Lilies&quot;,
+    &quot;description&quot;: &quot;Quia ad quam quae aperiam est dolorum dolores sapiente doloribus voluptate minus porro labore.&quot;,
+    &quot;pageCount&quot;: 594,
+    &quot;excerpt&quot;: &quot;Illum a consequatur. Quo iste provident vero. Et aut non consectetur et. Maiores quae optio ea et necessitatibus. Adipisci odio animi.&quot;,
+    &quot;publishDate&quot;: &quot;2025-12-13T02:37:33.237558538&quot;
+}&#39;
+</div>
