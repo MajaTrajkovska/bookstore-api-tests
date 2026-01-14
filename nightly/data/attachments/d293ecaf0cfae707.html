@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 85,
+    &quot;title&quot;: &quot;Cover Her Face&quot;,
+    &quot;description&quot;: &quot;Omnis in nulla nihil unde aperiam expedita aut unde consequatur.&quot;,
+    &quot;pageCount&quot;: 905,
+    &quot;excerpt&quot;: &quot;Tempore error pariatur repudiandae voluptatem qui. Et illo nulla quae voluptas voluptas libero. Quaerat tempore aliquam laborum ipsam et. Voluptatem fugit reiciendis fugiat non corporis. Occaecati et non hic facilis quaerat.&quot;,
+    &quot;publishDate&quot;: null
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 85,
+    &quot;title&quot;: &quot;Cover Her Face&quot;,
+    &quot;description&quot;: &quot;Omnis in nulla nihil unde aperiam expedita aut unde consequatur.&quot;,
+    &quot;pageCount&quot;: 905,
+    &quot;excerpt&quot;: &quot;Tempore error pariatur repudiandae voluptatem qui. Et illo nulla quae voluptas voluptas libero. Quaerat tempore aliquam laborum ipsam et. Voluptatem fugit reiciendis fugiat non corporis. Occaecati et non hic facilis quaerat.&quot;,
+    &quot;publishDate&quot;: null
+}&#39;
+</div>
