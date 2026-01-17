@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 156,
+    &quot;title&quot;: &quot;To Say Nothing of the Dog&quot;,
+    &quot;description&quot;: &quot;At iusto ut quos debitis asperiores earum perferendis porro officia.&quot;,
+    &quot;pageCount&quot;: 568,
+    &quot;excerpt&quot;: &quot;Enim ut eius minus repellat. Qui officiis repudiandae soluta. Animi vel esse eveniet sunt assumenda. Aliquid blanditiis natus nobis qui.&quot;,
+    &quot;publishDate&quot;: &quot;2026-01-17T02:39:14.408442669&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 156,
+    &quot;title&quot;: &quot;To Say Nothing of the Dog&quot;,
+    &quot;description&quot;: &quot;At iusto ut quos debitis asperiores earum perferendis porro officia.&quot;,
+    &quot;pageCount&quot;: 568,
+    &quot;excerpt&quot;: &quot;Enim ut eius minus repellat. Qui officiis repudiandae soluta. Animi vel esse eveniet sunt assumenda. Aliquid blanditiis natus nobis qui.&quot;,
+    &quot;publishDate&quot;: &quot;2026-01-17T02:39:14.408442669&quot;
+}&#39;
+</div>
