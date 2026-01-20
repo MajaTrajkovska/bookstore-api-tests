@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 126,
+    &quot;title&quot;: &quot;Cabbages and Kings&quot;,
+    &quot;description&quot;: &quot;Est accusantium molestiae quia totam ut quidem error consequuntur ab assumenda quia.&quot;,
+    &quot;pageCount&quot;: 877,
+    &quot;excerpt&quot;: &quot;Et illum molestias nulla voluptatem eum autem. Rerum error numquam. Optio atque fuga voluptatum ut nihil aut enim.&quot;,
+    &quot;publishDate&quot;: &quot;2026-01-20T02:46:15.041607643&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 126,
+    &quot;title&quot;: &quot;Cabbages and Kings&quot;,
+    &quot;description&quot;: &quot;Est accusantium molestiae quia totam ut quidem error consequuntur ab assumenda quia.&quot;,
+    &quot;pageCount&quot;: 877,
+    &quot;excerpt&quot;: &quot;Et illum molestias nulla voluptatem eum autem. Rerum error numquam. Optio atque fuga voluptatum ut nihil aut enim.&quot;,
+    &quot;publishDate&quot;: &quot;2026-01-20T02:46:15.041607643&quot;
+}&#39;
+</div>
