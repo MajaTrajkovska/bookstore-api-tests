@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 20,
+    &quot;title&quot;: &quot;Things Fall Apart&quot;,
+    &quot;description&quot;: &quot;Neque eligendi pariatur dolorem dolores est facilis voluptas dolorum velit iure repudiandae sit fuga dolorem.&quot;,
+    &quot;pageCount&quot;: 91,
+    &quot;excerpt&quot;: &quot;Labore eum debitis sapiente officia. Sunt architecto laborum ut nam soluta odio laboriosam. Molestiae magni eveniet voluptas. Nihil qui temporibus qui.&quot;,
+    &quot;publishDate&quot;: &quot;2026-02-11T03:07:43.248205872&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 20,
+    &quot;title&quot;: &quot;Things Fall Apart&quot;,
+    &quot;description&quot;: &quot;Neque eligendi pariatur dolorem dolores est facilis voluptas dolorum velit iure repudiandae sit fuga dolorem.&quot;,
+    &quot;pageCount&quot;: 91,
+    &quot;excerpt&quot;: &quot;Labore eum debitis sapiente officia. Sunt architecto laborum ut nam soluta odio laboriosam. Molestiae magni eveniet voluptas. Nihil qui temporibus qui.&quot;,
+    &quot;publishDate&quot;: &quot;2026-02-11T03:07:43.248205872&quot;
+}&#39;
+</div>
