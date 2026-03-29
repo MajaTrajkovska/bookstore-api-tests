@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 63,
+    &quot;title&quot;: &quot;No Longer at Ease&quot;,
+    &quot;description&quot;: &quot;Optio iusto exercitationem alias ab aut eum repellendus expedita ipsam ut perferendis sunt esse.&quot;,
+    &quot;pageCount&quot;: 430,
+    &quot;excerpt&quot;: &quot;Omnis laudantium eos dolor ipsa architecto in nihil. Dolor laborum explicabo. Praesentium numquam aut aut nihil dolores quis aut. Totam nihil ut.&quot;,
+    &quot;publishDate&quot;: &quot;08/15/2023&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 63,
+    &quot;title&quot;: &quot;No Longer at Ease&quot;,
+    &quot;description&quot;: &quot;Optio iusto exercitationem alias ab aut eum repellendus expedita ipsam ut perferendis sunt esse.&quot;,
+    &quot;pageCount&quot;: 430,
+    &quot;excerpt&quot;: &quot;Omnis laudantium eos dolor ipsa architecto in nihil. Dolor laborum explicabo. Praesentium numquam aut aut nihil dolores quis aut. Totam nihil ut.&quot;,
+    &quot;publishDate&quot;: &quot;08/15/2023&quot;
+}&#39;
+</div>

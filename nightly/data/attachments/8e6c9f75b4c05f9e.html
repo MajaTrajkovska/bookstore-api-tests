@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 127,
+    &quot;title&quot;: &quot;Some Buried Caesar&quot;,
+    &quot;description&quot;: &quot;Ab qui voluptatem doloribus autem porro qui omnis vitae autem ut illum impedit adipisci in.&quot;,
+    &quot;pageCount&quot;: null,
+    &quot;excerpt&quot;: &quot;Incidunt reprehenderit optio reprehenderit vitae voluptates. Sint molestiae modi voluptatem ut vel nihil. Ad temporibus aliquam ut et rerum sed.&quot;,
+    &quot;publishDate&quot;: &quot;2026-03-29T03:08:48.621362701&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 127,
+    &quot;title&quot;: &quot;Some Buried Caesar&quot;,
+    &quot;description&quot;: &quot;Ab qui voluptatem doloribus autem porro qui omnis vitae autem ut illum impedit adipisci in.&quot;,
+    &quot;pageCount&quot;: null,
+    &quot;excerpt&quot;: &quot;Incidunt reprehenderit optio reprehenderit vitae voluptates. Sint molestiae modi voluptatem ut vel nihil. Ad temporibus aliquam ut et rerum sed.&quot;,
+    &quot;publishDate&quot;: &quot;2026-03-29T03:08:48.621362701&quot;
+}&#39;
+</div>
