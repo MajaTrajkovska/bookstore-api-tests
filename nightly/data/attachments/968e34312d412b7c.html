@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 1,
+    &quot;title&quot;: &quot;All the King&#39;s Men&quot;,
+    &quot;description&quot;: &quot;Nihil nisi praesentium quod iusto ipsa exercitationem expedita aspernatur et laboriosam repudiandae similique perferendis.&quot;,
+    &quot;pageCount&quot;: -5,
+    &quot;excerpt&quot;: &quot;Ea quis dolores magni nesciunt temporibus nemo qui. Totam natus ut consequatur. Sunt quos deserunt dolorem repellendus odio aliquid.&quot;,
+    &quot;publishDate&quot;: &quot;2026-04-28T03:11:33.648052643&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 1,
+    &quot;title&quot;: &quot;All the King&#39;s Men&quot;,
+    &quot;description&quot;: &quot;Nihil nisi praesentium quod iusto ipsa exercitationem expedita aspernatur et laboriosam repudiandae similique perferendis.&quot;,
+    &quot;pageCount&quot;: -5,
+    &quot;excerpt&quot;: &quot;Ea quis dolores magni nesciunt temporibus nemo qui. Totam natus ut consequatur. Sunt quos deserunt dolorem repellendus odio aliquid.&quot;,
+    &quot;publishDate&quot;: &quot;2026-04-28T03:11:33.648052643&quot;
+}&#39;
+</div>
