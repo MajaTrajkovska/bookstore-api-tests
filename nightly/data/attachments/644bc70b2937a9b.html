@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 160,
+    &quot;title&quot;: &quot;Brandy of the Damned&quot;,
+    &quot;description&quot;: &quot;Nulla dolores iste omnis nesciunt repellendus fugiat qui quia quibusdam voluptatem.&quot;,
+    &quot;pageCount&quot;: 244,
+    &quot;excerpt&quot;: &quot;Nihil assumenda aliquid eius impedit deleniti. Odit ab saepe. Quo animi esse.&quot;,
+    &quot;publishDate&quot;: &quot;2026-05-05T03:10:36.019239463&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 160,
+    &quot;title&quot;: &quot;Brandy of the Damned&quot;,
+    &quot;description&quot;: &quot;Nulla dolores iste omnis nesciunt repellendus fugiat qui quia quibusdam voluptatem.&quot;,
+    &quot;pageCount&quot;: 244,
+    &quot;excerpt&quot;: &quot;Nihil assumenda aliquid eius impedit deleniti. Odit ab saepe. Quo animi esse.&quot;,
+    &quot;publishDate&quot;: &quot;2026-05-05T03:10:36.019239463&quot;
+}&#39;
+</div>
