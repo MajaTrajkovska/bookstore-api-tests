@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 159,
+    &quot;title&quot;: &quot;The Moving Toyshop&quot;,
+    &quot;description&quot;: &quot;Dicta libero suscipit aperiam est aperiam laborum dolores vel quis quisquam libero.&quot;,
+    &quot;pageCount&quot;: 443,
+    &quot;excerpt&quot;: &quot;Excepturi perspiciatis quia natus. Consequatur dolorum odio illo ea. Aut porro suscipit.&quot;,
+    &quot;publishDate&quot;: &quot;2026-05-22T03:13:23.980121589&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 159,
+    &quot;title&quot;: &quot;The Moving Toyshop&quot;,
+    &quot;description&quot;: &quot;Dicta libero suscipit aperiam est aperiam laborum dolores vel quis quisquam libero.&quot;,
+    &quot;pageCount&quot;: 443,
+    &quot;excerpt&quot;: &quot;Excepturi perspiciatis quia natus. Consequatur dolorum odio illo ea. Aut porro suscipit.&quot;,
+    &quot;publishDate&quot;: &quot;2026-05-22T03:13:23.980121589&quot;
+}&#39;
+</div>
