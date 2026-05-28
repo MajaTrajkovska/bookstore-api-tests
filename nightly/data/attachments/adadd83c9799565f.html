@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 42,
+    &quot;title&quot;: &quot;The Grapes of Wrath&quot;,
+    &quot;description&quot;: &quot;Animi ea cum eos placeat laudantium unde aut error autem et alias.&quot;,
+    &quot;pageCount&quot;: 50,
+    &quot;excerpt&quot;: &quot;Sed voluptate ex ut nostrum doloremque non eius. Facere ut soluta. Aut earum dolor dicta a inventore placeat nam. Omnis quos optio aut.&quot;,
+    &quot;publishDate&quot;: &quot;2026-05-28T03:15:15.34513758&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 42,
+    &quot;title&quot;: &quot;The Grapes of Wrath&quot;,
+    &quot;description&quot;: &quot;Animi ea cum eos placeat laudantium unde aut error autem et alias.&quot;,
+    &quot;pageCount&quot;: 50,
+    &quot;excerpt&quot;: &quot;Sed voluptate ex ut nostrum doloremque non eius. Facere ut soluta. Aut earum dolor dicta a inventore placeat nam. Omnis quos optio aut.&quot;,
+    &quot;publishDate&quot;: &quot;2026-05-28T03:15:15.34513758&quot;
+}&#39;
+</div>
