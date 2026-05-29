@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 81,
+    &quot;title&quot;: &quot;By Grand Central Station I Sat Down and Wept&quot;,
+    &quot;description&quot;: &quot;Magnam fugit tenetur a eos nihil corporis doloremque quo consequatur et distinctio velit aut.&quot;,
+    &quot;pageCount&quot;: 784,
+    &quot;excerpt&quot;: &quot;Qui voluptatem necessitatibus eum. Magni qui inventore corporis possimus. Dicta excepturi et consequatur in non.&quot;,
+    &quot;publishDate&quot;: &quot;2026-05-29T03:13:55.357285085&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 81,
+    &quot;title&quot;: &quot;By Grand Central Station I Sat Down and Wept&quot;,
+    &quot;description&quot;: &quot;Magnam fugit tenetur a eos nihil corporis doloremque quo consequatur et distinctio velit aut.&quot;,
+    &quot;pageCount&quot;: 784,
+    &quot;excerpt&quot;: &quot;Qui voluptatem necessitatibus eum. Magni qui inventore corporis possimus. Dicta excepturi et consequatur in non.&quot;,
+    &quot;publishDate&quot;: &quot;2026-05-29T03:13:55.357285085&quot;
+}&#39;
+</div>
