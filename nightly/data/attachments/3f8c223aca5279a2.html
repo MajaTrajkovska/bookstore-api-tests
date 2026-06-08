@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 1,
+    &quot;title&quot;: &quot;The Mirror Crack&#39;d from Side to Side&quot;,
+    &quot;description&quot;: &quot;Voluptas rem nobis sequi eligendi sit est animi molestias iure.&quot;,
+    &quot;pageCount&quot;: 110,
+    &quot;excerpt&quot;: &quot;Quos itaque perferendis assumenda ipsam officia nam. Est explicabo aperiam excepturi eos est ea aut. Laborum perferendis a qui tempora.&quot;,
+    &quot;publishDate&quot;: &quot;2026-06-08T03:15:53.508842133&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 1,
+    &quot;title&quot;: &quot;The Mirror Crack&#39;d from Side to Side&quot;,
+    &quot;description&quot;: &quot;Voluptas rem nobis sequi eligendi sit est animi molestias iure.&quot;,
+    &quot;pageCount&quot;: 110,
+    &quot;excerpt&quot;: &quot;Quos itaque perferendis assumenda ipsam officia nam. Est explicabo aperiam excepturi eos est ea aut. Laborum perferendis a qui tempora.&quot;,
+    &quot;publishDate&quot;: &quot;2026-06-08T03:15:53.508842133&quot;
+}&#39;
+</div>
