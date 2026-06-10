@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 113,
+    &quot;title&quot;: &quot;The World, the Flesh and the Devil&quot;,
+    &quot;description&quot;: &quot;Aut molestiae sint dolor beatae et quo deserunt voluptatem neque.&quot;,
+    &quot;pageCount&quot;: 582,
+    &quot;excerpt&quot;: &quot;Qui itaque sit. Deleniti velit recusandae consequuntur consequatur ut iste. Reiciendis aspernatur animi voluptatem.&quot;,
+    &quot;publishDate&quot;: &quot;2026-06-10T03:13:28.115927268&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 113,
+    &quot;title&quot;: &quot;The World, the Flesh and the Devil&quot;,
+    &quot;description&quot;: &quot;Aut molestiae sint dolor beatae et quo deserunt voluptatem neque.&quot;,
+    &quot;pageCount&quot;: 582,
+    &quot;excerpt&quot;: &quot;Qui itaque sit. Deleniti velit recusandae consequuntur consequatur ut iste. Reiciendis aspernatur animi voluptatem.&quot;,
+    &quot;publishDate&quot;: &quot;2026-06-10T03:13:28.115927268&quot;
+}&#39;
+</div>
