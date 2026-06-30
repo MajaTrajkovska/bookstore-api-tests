@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 100,
+    &quot;title&quot;: &quot;East of Eden&quot;,
+    &quot;description&quot;: &quot;Voluptatem nostrum sint deleniti deserunt velit quibusdam illum sapiente quis rerum qui.&quot;,
+    &quot;pageCount&quot;: 677,
+    &quot;excerpt&quot;: &quot;Sit voluptatem quidem quia modi minus est ad. Assumenda est culpa reprehenderit. Dolor rerum corrupti et quo repudiandae aut et.&quot;,
+    &quot;publishDate&quot;: &quot;2026-06-30T03:13:01.307323317&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 100,
+    &quot;title&quot;: &quot;East of Eden&quot;,
+    &quot;description&quot;: &quot;Voluptatem nostrum sint deleniti deserunt velit quibusdam illum sapiente quis rerum qui.&quot;,
+    &quot;pageCount&quot;: 677,
+    &quot;excerpt&quot;: &quot;Sit voluptatem quidem quia modi minus est ad. Assumenda est culpa reprehenderit. Dolor rerum corrupti et quo repudiandae aut et.&quot;,
+    &quot;publishDate&quot;: &quot;2026-06-30T03:13:01.307323317&quot;
+}&#39;
+</div>

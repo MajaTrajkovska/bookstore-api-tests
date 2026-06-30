@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 145,
+    &quot;title&quot;: &quot;Alone on a Wide, Wide Sea&quot;,
+    &quot;description&quot;: &quot;Consequatur et tempore ratione suscipit voluptatem dolore officiis magni iusto.&quot;,
+    &quot;pageCount&quot;: 425,
+    &quot;excerpt&quot;: &quot;Laudantium fugit facilis. Voluptas officia sed placeat sapiente et in rerum. Veritatis eaque nisi in omnis saepe blanditiis. Quas exercitationem ipsam quis quibusdam et unde.&quot;,
+    &quot;publishDate&quot;: &quot;2026-06-30T03:12:54.29269036&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 145,
+    &quot;title&quot;: &quot;Alone on a Wide, Wide Sea&quot;,
+    &quot;description&quot;: &quot;Consequatur et tempore ratione suscipit voluptatem dolore officiis magni iusto.&quot;,
+    &quot;pageCount&quot;: 425,
+    &quot;excerpt&quot;: &quot;Laudantium fugit facilis. Voluptas officia sed placeat sapiente et in rerum. Veritatis eaque nisi in omnis saepe blanditiis. Quas exercitationem ipsam quis quibusdam et unde.&quot;,
+    &quot;publishDate&quot;: &quot;2026-06-30T03:12:54.29269036&quot;
+}&#39;
+</div>
