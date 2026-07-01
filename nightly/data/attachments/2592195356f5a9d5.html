@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 86,
+    &quot;title&quot;: &quot;A Scanner Darkly&quot;,
+    &quot;description&quot;: &quot;Molestiae ipsam incidunt vero aut et commodi velit qui harum commodi nesciunt occaecati.&quot;,
+    &quot;pageCount&quot;: 504,
+    &quot;excerpt&quot;: &quot;Voluptatem dolor dolore laborum. Sunt non autem laboriosam molestias dolores consequatur ullam. Nisi voluptatem sint accusamus. Sint vel neque.&quot;,
+    &quot;publishDate&quot;: &quot;2026-07-01T03:14:27.426657608&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 86,
+    &quot;title&quot;: &quot;A Scanner Darkly&quot;,
+    &quot;description&quot;: &quot;Molestiae ipsam incidunt vero aut et commodi velit qui harum commodi nesciunt occaecati.&quot;,
+    &quot;pageCount&quot;: 504,
+    &quot;excerpt&quot;: &quot;Voluptatem dolor dolore laborum. Sunt non autem laboriosam molestias dolores consequatur ullam. Nisi voluptatem sint accusamus. Sint vel neque.&quot;,
+    &quot;publishDate&quot;: &quot;2026-07-01T03:14:27.426657608&quot;
+}&#39;
+</div>
