@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: null,
+    &quot;title&quot;: &quot;The Other Side of Silence&quot;,
+    &quot;description&quot;: &quot;Impedit nihil corporis soluta accusamus neque vel quidem eum error sunt.&quot;,
+    &quot;pageCount&quot;: 956,
+    &quot;excerpt&quot;: &quot;Esse error occaecati voluptatem sequi debitis quo. Ad molestias exercitationem voluptatem iure fuga debitis. Accusantium nemo consequatur quod delectus.&quot;,
+    &quot;publishDate&quot;: &quot;2026-07-07T03:10:30.65093752&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: null,
+    &quot;title&quot;: &quot;The Other Side of Silence&quot;,
+    &quot;description&quot;: &quot;Impedit nihil corporis soluta accusamus neque vel quidem eum error sunt.&quot;,
+    &quot;pageCount&quot;: 956,
+    &quot;excerpt&quot;: &quot;Esse error occaecati voluptatem sequi debitis quo. Ad molestias exercitationem voluptatem iure fuga debitis. Accusantium nemo consequatur quod delectus.&quot;,
+    &quot;publishDate&quot;: &quot;2026-07-07T03:10:30.65093752&quot;
+}&#39;
+</div>
