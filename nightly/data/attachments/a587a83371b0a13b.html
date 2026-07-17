@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 22,
+    &quot;title&quot;: &quot;Dying of the Light&quot;,
+    &quot;description&quot;: &quot;Asperiores ut incidunt quidem odio sint consequatur rerum possimus nemo sed eius molestiae quam.&quot;,
+    &quot;pageCount&quot;: 426,
+    &quot;excerpt&quot;: &quot;Neque maiores dicta maxime quasi aliquid. Quas hic est. Corrupti et qui sunt repellendus cumque quas.&quot;,
+    &quot;publishDate&quot;: &quot;2026-07-17T03:07:28.46938964&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 22,
+    &quot;title&quot;: &quot;Dying of the Light&quot;,
+    &quot;description&quot;: &quot;Asperiores ut incidunt quidem odio sint consequatur rerum possimus nemo sed eius molestiae quam.&quot;,
+    &quot;pageCount&quot;: 426,
+    &quot;excerpt&quot;: &quot;Neque maiores dicta maxime quasi aliquid. Quas hic est. Corrupti et qui sunt repellendus cumque quas.&quot;,
+    &quot;publishDate&quot;: &quot;2026-07-17T03:07:28.46938964&quot;
+}&#39;
+</div>
