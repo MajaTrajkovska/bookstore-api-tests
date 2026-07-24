@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 134,
+    &quot;title&quot;: &quot;Postern of Fate&quot;,
+    &quot;description&quot;: &quot;Sit aut maxime pariatur quibusdam eum possimus labore et molestias qui qui.&quot;,
+    &quot;pageCount&quot;: 986,
+    &quot;excerpt&quot;: &quot;Rerum est nihil. Veniam voluptas culpa ut aut neque fuga hic. Ad aut iste rerum placeat perferendis magnam voluptate. Omnis eum et ut omnis eveniet. Nihil officiis rerum.&quot;,
+    &quot;publishDate&quot;: null
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 134,
+    &quot;title&quot;: &quot;Postern of Fate&quot;,
+    &quot;description&quot;: &quot;Sit aut maxime pariatur quibusdam eum possimus labore et molestias qui qui.&quot;,
+    &quot;pageCount&quot;: 986,
+    &quot;excerpt&quot;: &quot;Rerum est nihil. Veniam voluptas culpa ut aut neque fuga hic. Ad aut iste rerum placeat perferendis magnam voluptate. Omnis eum et ut omnis eveniet. Nihil officiis rerum.&quot;,
+    &quot;publishDate&quot;: null
+}&#39;
+</div>
