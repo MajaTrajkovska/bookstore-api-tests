@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 145,
+    &quot;title&quot;: &quot;Carrion Comfort&quot;,
+    &quot;description&quot;: &quot;Ea eligendi quis quis architecto tenetur odit eos voluptatem eos nihil sint.&quot;,
+    &quot;pageCount&quot;: 256,
+    &quot;excerpt&quot;: &quot;Vero magnam ipsa iure ullam nihil omnis. Dolores numquam architecto iusto tempora consequatur molestiae aspernatur. Enim eum dicta veniam aut.&quot;,
+    &quot;publishDate&quot;: &quot;2026-08-05T03:06:28.090722568&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 145,
+    &quot;title&quot;: &quot;Carrion Comfort&quot;,
+    &quot;description&quot;: &quot;Ea eligendi quis quis architecto tenetur odit eos voluptatem eos nihil sint.&quot;,
+    &quot;pageCount&quot;: 256,
+    &quot;excerpt&quot;: &quot;Vero magnam ipsa iure ullam nihil omnis. Dolores numquam architecto iusto tempora consequatur molestiae aspernatur. Enim eum dicta veniam aut.&quot;,
+    &quot;publishDate&quot;: &quot;2026-08-05T03:06:28.090722568&quot;
+}&#39;
+</div>
