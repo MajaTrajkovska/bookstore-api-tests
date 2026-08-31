@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 5,
+    &quot;title&quot;: &quot;Look Homeward, Angel&quot;,
+    &quot;description&quot;: &quot;Ut qui qui itaque quos ratione maxime et itaque quibusdam cupiditate error nihil aperiam.&quot;,
+    &quot;pageCount&quot;: 233,
+    &quot;excerpt&quot;: &quot;Enim soluta consequatur odit placeat sit accusamus sed. Voluptatibus rerum voluptas dolorem sint aliquid soluta temporibus. Qui et alias consequatur. Temporibus pariatur voluptatem.&quot;,
+    &quot;publishDate&quot;: &quot;2026-08-31T02:19:48.670182471&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 5,
+    &quot;title&quot;: &quot;Look Homeward, Angel&quot;,
+    &quot;description&quot;: &quot;Ut qui qui itaque quos ratione maxime et itaque quibusdam cupiditate error nihil aperiam.&quot;,
+    &quot;pageCount&quot;: 233,
+    &quot;excerpt&quot;: &quot;Enim soluta consequatur odit placeat sit accusamus sed. Voluptatibus rerum voluptas dolorem sint aliquid soluta temporibus. Qui et alias consequatur. Temporibus pariatur voluptatem.&quot;,
+    &quot;publishDate&quot;: &quot;2026-08-31T02:19:48.670182471&quot;
+}&#39;
+</div>
