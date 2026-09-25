@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 111,
+    &quot;title&quot;: &quot;Dulce et Decorum Est&quot;,
+    &quot;description&quot;: &quot;Sit hic nihil voluptas nam blanditiis dolorem illum aut dolorem sunt eius.&quot;,
+    &quot;pageCount&quot;: 255,
+    &quot;excerpt&quot;: &quot;Eveniet alias inventore aliquam ratione eligendi. Error veritatis reprehenderit sed laudantium sint vero dolor. Suscipit magnam odio. Quo fugit non qui ut eveniet. Voluptatem quia molestiae rem consequatur optio.&quot;,
+    &quot;publishDate&quot;: &quot;2026-09-25T02:16:54.393297011&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 111,
+    &quot;title&quot;: &quot;Dulce et Decorum Est&quot;,
+    &quot;description&quot;: &quot;Sit hic nihil voluptas nam blanditiis dolorem illum aut dolorem sunt eius.&quot;,
+    &quot;pageCount&quot;: 255,
+    &quot;excerpt&quot;: &quot;Eveniet alias inventore aliquam ratione eligendi. Error veritatis reprehenderit sed laudantium sint vero dolor. Suscipit magnam odio. Quo fugit non qui ut eveniet. Voluptatem quia molestiae rem consequatur optio.&quot;,
+    &quot;publishDate&quot;: &quot;2026-09-25T02:16:54.393297011&quot;
+}&#39;
+</div>
