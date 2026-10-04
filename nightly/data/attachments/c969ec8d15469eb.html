@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 168,
+    &quot;title&quot;: &quot;The Way of All Flesh&quot;,
+    &quot;description&quot;: &quot;Occaecati vel alias ut et rerum ab dignissimos consequatur ratione asperiores est.&quot;,
+    &quot;pageCount&quot;: 461,
+    &quot;excerpt&quot;: &quot;Id corrupti voluptatem velit. Consequatur dolorem vel dolores voluptatem in sed. Quasi velit itaque odio molestiae dolorem fugiat. Quis eum in quasi sed.&quot;,
+    &quot;publishDate&quot;: &quot;2026-10-04T02:53:11.529518317&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 168,
+    &quot;title&quot;: &quot;The Way of All Flesh&quot;,
+    &quot;description&quot;: &quot;Occaecati vel alias ut et rerum ab dignissimos consequatur ratione asperiores est.&quot;,
+    &quot;pageCount&quot;: 461,
+    &quot;excerpt&quot;: &quot;Id corrupti voluptatem velit. Consequatur dolorem vel dolores voluptatem in sed. Quasi velit itaque odio molestiae dolorem fugiat. Quis eum in quasi sed.&quot;,
+    &quot;publishDate&quot;: &quot;2026-10-04T02:53:11.529518317&quot;
+}&#39;
+</div>
