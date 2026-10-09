@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 41,
+    &quot;title&quot;: &quot;Consider the Lilies&quot;,
+    &quot;description&quot;: &quot;Est aspernatur odit et expedita non a adipisci pariatur reprehenderit ipsum consequatur inventore.&quot;,
+    &quot;pageCount&quot;: 163,
+    &quot;excerpt&quot;: &quot;Suscipit sunt exercitationem vitae rerum ipsa sunt. Sunt aut nihil id natus nisi eum. Sunt vel sed ut odio fugiat autem dicta. Veritatis repudiandae voluptates molestiae eum ipsa odio.&quot;,
+    &quot;publishDate&quot;: &quot;2026-10-09T02:26:44.254388134&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 41,
+    &quot;title&quot;: &quot;Consider the Lilies&quot;,
+    &quot;description&quot;: &quot;Est aspernatur odit et expedita non a adipisci pariatur reprehenderit ipsum consequatur inventore.&quot;,
+    &quot;pageCount&quot;: 163,
+    &quot;excerpt&quot;: &quot;Suscipit sunt exercitationem vitae rerum ipsa sunt. Sunt aut nihil id natus nisi eum. Sunt vel sed ut odio fugiat autem dicta. Veritatis repudiandae voluptates molestiae eum ipsa odio.&quot;,
+    &quot;publishDate&quot;: &quot;2026-10-09T02:26:44.254388134&quot;
+}&#39;
+</div>
