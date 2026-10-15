@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 66,
+    &quot;title&quot;: &quot;The Green Bay Tree&quot;,
+    &quot;description&quot;: &quot;Delectus veniam placeat laborum dolores facilis enim inventore et tempore laboriosam dolorem corporis.&quot;,
+    &quot;pageCount&quot;: 382,
+    &quot;excerpt&quot;: &quot;Quae dolores et ut temporibus odio. Autem eos maxime autem. Fuga nihil aut id ut.&quot;,
+    &quot;publishDate&quot;: null
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 66,
+    &quot;title&quot;: &quot;The Green Bay Tree&quot;,
+    &quot;description&quot;: &quot;Delectus veniam placeat laborum dolores facilis enim inventore et tempore laboriosam dolorem corporis.&quot;,
+    &quot;pageCount&quot;: 382,
+    &quot;excerpt&quot;: &quot;Quae dolores et ut temporibus odio. Autem eos maxime autem. Fuga nihil aut id ut.&quot;,
+    &quot;publishDate&quot;: null
+}&#39;
+</div>
