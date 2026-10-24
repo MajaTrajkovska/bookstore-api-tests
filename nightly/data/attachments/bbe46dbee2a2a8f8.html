@@ -1,0 +1,34 @@
+<div>PUT to https://fakerestapi.azurewebsites.net/api/v1/Books/27</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 120,
+    &quot;title&quot;: &quot;The Waste Land&quot;,
+    &quot;description&quot;: &quot;Atque voluptatum et ipsa quia quidem aut sint explicabo ipsam.&quot;,
+    &quot;pageCount&quot;: 952,
+    &quot;excerpt&quot;: &quot;Eos consequatur commodi molestias molestiae rerum. Inventore voluptatem consequatur perferendis alias earum. Consectetur in ea molestias nemo tempora. Eos omnis quasi sed nulla tempore.&quot;,
+    &quot;publishDate&quot;: &quot;08/15/2023&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X PUT &#39;https://fakerestapi.azurewebsites.net/api/v1/Books/27&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 120,
+    &quot;title&quot;: &quot;The Waste Land&quot;,
+    &quot;description&quot;: &quot;Atque voluptatum et ipsa quia quidem aut sint explicabo ipsam.&quot;,
+    &quot;pageCount&quot;: 952,
+    &quot;excerpt&quot;: &quot;Eos consequatur commodi molestias molestiae rerum. Inventore voluptatem consequatur perferendis alias earum. Consectetur in ea molestias nemo tempora. Eos omnis quasi sed nulla tempore.&quot;,
+    &quot;publishDate&quot;: &quot;08/15/2023&quot;
+}&#39;
+</div>
