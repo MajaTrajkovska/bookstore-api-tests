@@ -1,0 +1,34 @@
+<div>PUT to https://fakerestapi.azurewebsites.net/api/v1/Books/7</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 45,
+    &quot;title&quot;: &quot;If Not Now, When?&quot;,
+    &quot;description&quot;: &quot;Minima aut quasi qui ut sunt voluptas nulla libero cumque cupiditate et debitis mollitia nulla.&quot;,
+    &quot;pageCount&quot;: 966,
+    &quot;excerpt&quot;: &quot;Aut voluptas facilis consequatur atque voluptate et. Ut omnis ratione reiciendis praesentium deserunt excepturi. Voluptas veniam explicabo vitae harum eos.&quot;,
+    &quot;publishDate&quot;: null
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X PUT &#39;https://fakerestapi.azurewebsites.net/api/v1/Books/7&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 45,
+    &quot;title&quot;: &quot;If Not Now, When?&quot;,
+    &quot;description&quot;: &quot;Minima aut quasi qui ut sunt voluptas nulla libero cumque cupiditate et debitis mollitia nulla.&quot;,
+    &quot;pageCount&quot;: 966,
+    &quot;excerpt&quot;: &quot;Aut voluptas facilis consequatur atque voluptate et. Ut omnis ratione reiciendis praesentium deserunt excepturi. Voluptas veniam explicabo vitae harum eos.&quot;,
+    &quot;publishDate&quot;: null
+}&#39;
+</div>
