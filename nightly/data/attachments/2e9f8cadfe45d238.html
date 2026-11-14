@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 173,
+    &quot;title&quot;: &quot;I Will Fear No Evil&quot;,
+    &quot;description&quot;: &quot;Necessitatibus ipsa ut delectus est voluptatem nemo nam sunt qui sit.&quot;,
+    &quot;pageCount&quot;: 245,
+    &quot;excerpt&quot;: &quot;Delectus beatae aut dolorem quasi et consequuntur et. Cum error et corrupti aut quia tempora. Quis rerum eius rerum voluptatum sunt cumque unde.&quot;,
+    &quot;publishDate&quot;: &quot;2026-11-14T02:11:14.55519679&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 173,
+    &quot;title&quot;: &quot;I Will Fear No Evil&quot;,
+    &quot;description&quot;: &quot;Necessitatibus ipsa ut delectus est voluptatem nemo nam sunt qui sit.&quot;,
+    &quot;pageCount&quot;: 245,
+    &quot;excerpt&quot;: &quot;Delectus beatae aut dolorem quasi et consequuntur et. Cum error et corrupti aut quia tempora. Quis rerum eius rerum voluptatum sunt cumque unde.&quot;,
+    &quot;publishDate&quot;: &quot;2026-11-14T02:11:14.55519679&quot;
+}&#39;
+</div>
