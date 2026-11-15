@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 144,
+    &quot;title&quot;: &quot;Infinite Jest&quot;,
+    &quot;description&quot;: &quot;Qui hic accusantium reiciendis voluptas sit autem praesentium et incidunt sed iste quia voluptatem omnis.&quot;,
+    &quot;pageCount&quot;: -5,
+    &quot;excerpt&quot;: &quot;Unde animi cumque quia cumque accusantium rem et. Eum culpa ipsum pariatur esse dolorem commodi. Velit et consectetur et beatae iusto animi.&quot;,
+    &quot;publishDate&quot;: &quot;2026-11-15T02:11:29.966826509&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 144,
+    &quot;title&quot;: &quot;Infinite Jest&quot;,
+    &quot;description&quot;: &quot;Qui hic accusantium reiciendis voluptas sit autem praesentium et incidunt sed iste quia voluptatem omnis.&quot;,
+    &quot;pageCount&quot;: -5,
+    &quot;excerpt&quot;: &quot;Unde animi cumque quia cumque accusantium rem et. Eum culpa ipsum pariatur esse dolorem commodi. Velit et consectetur et beatae iusto animi.&quot;,
+    &quot;publishDate&quot;: &quot;2026-11-15T02:11:29.966826509&quot;
+}&#39;
+</div>
