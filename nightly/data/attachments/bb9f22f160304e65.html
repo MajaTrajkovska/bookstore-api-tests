@@ -1,0 +1,34 @@
+<div>PUT to https://fakerestapi.azurewebsites.net/api/v1/Books/45</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: null,
+    &quot;title&quot;: &quot;Wildfire at Midnight&quot;,
+    &quot;description&quot;: &quot;Minima nisi aut incidunt quo aut facere asperiores id vel est reprehenderit optio.&quot;,
+    &quot;pageCount&quot;: 500,
+    &quot;excerpt&quot;: &quot;Dolores illo accusantium exercitationem quia. Quo sunt dolor esse. Velit ea consectetur. Iste illum aut. Et sed sunt est sed ea.&quot;,
+    &quot;publishDate&quot;: &quot;2026-11-19T09:56:41.404647052&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X PUT &#39;https://fakerestapi.azurewebsites.net/api/v1/Books/45&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: null,
+    &quot;title&quot;: &quot;Wildfire at Midnight&quot;,
+    &quot;description&quot;: &quot;Minima nisi aut incidunt quo aut facere asperiores id vel est reprehenderit optio.&quot;,
+    &quot;pageCount&quot;: 500,
+    &quot;excerpt&quot;: &quot;Dolores illo accusantium exercitationem quia. Quo sunt dolor esse. Velit ea consectetur. Iste illum aut. Et sed sunt est sed ea.&quot;,
+    &quot;publishDate&quot;: &quot;2026-11-19T09:56:41.404647052&quot;
+}&#39;
+</div>

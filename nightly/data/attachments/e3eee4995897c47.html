@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 92,
+    &quot;title&quot;: &quot;Death Be Not Proud&quot;,
+    &quot;description&quot;: &quot;Voluptatem sapiente eaque earum voluptas assumenda expedita laudantium minus in est ut corrupti et.&quot;,
+    &quot;pageCount&quot;: 512,
+    &quot;excerpt&quot;: &quot;Perferendis illo ut. Sunt accusamus et id est neque sequi. Aut accusantium corporis deleniti quaerat in enim. Occaecati ratione ut aspernatur aliquam necessitatibus.&quot;,
+    &quot;publishDate&quot;: null
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 92,
+    &quot;title&quot;: &quot;Death Be Not Proud&quot;,
+    &quot;description&quot;: &quot;Voluptatem sapiente eaque earum voluptas assumenda expedita laudantium minus in est ut corrupti et.&quot;,
+    &quot;pageCount&quot;: 512,
+    &quot;excerpt&quot;: &quot;Perferendis illo ut. Sunt accusamus et id est neque sequi. Aut accusantium corporis deleniti quaerat in enim. Occaecati ratione ut aspernatur aliquam necessitatibus.&quot;,
+    &quot;publishDate&quot;: null
+}&#39;
+</div>

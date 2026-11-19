@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 159,
+    &quot;title&quot;: &quot;An Evil Cradling&quot;,
+    &quot;description&quot;: &quot;Sunt perspiciatis et aperiam autem autem et assumenda blanditiis eos rerum in vel nihil repellat.&quot;,
+    &quot;pageCount&quot;: 567,
+    &quot;excerpt&quot;: &quot;Non distinctio illum optio aut qui odio. Dolores autem vero libero porro impedit est. Velit animi beatae.&quot;,
+    &quot;publishDate&quot;: &quot;2026-11-19T09:56:39.314828163&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 159,
+    &quot;title&quot;: &quot;An Evil Cradling&quot;,
+    &quot;description&quot;: &quot;Sunt perspiciatis et aperiam autem autem et assumenda blanditiis eos rerum in vel nihil repellat.&quot;,
+    &quot;pageCount&quot;: 567,
+    &quot;excerpt&quot;: &quot;Non distinctio illum optio aut qui odio. Dolores autem vero libero porro impedit est. Velit animi beatae.&quot;,
+    &quot;publishDate&quot;: &quot;2026-11-19T09:56:39.314828163&quot;
+}&#39;
+</div>
