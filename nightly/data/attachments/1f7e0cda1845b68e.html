@@ -1,0 +1,34 @@
+<div>POST to https://fakerestapi.azurewebsites.net/api/v1/Books</div>
+
+<h4>Body</h4>
+<div>
+    <pre class="preformated-text">
+{
+    &quot;id&quot;: 158,
+    &quot;title&quot;: &quot;Mr Standfast&quot;,
+    &quot;description&quot;: &quot;Repellat et non minima nulla qui optio architecto distinctio modi.&quot;,
+    &quot;pageCount&quot;: 712,
+    &quot;excerpt&quot;: &quot;Quas eum et inventore eligendi repellat. Dolor omnis est quidem. Aut quod vitae. Cupiditate ea nulla voluptas.&quot;,
+    &quot;publishDate&quot;: &quot;2026-11-20T09:44:31.45590038&quot;
+}    </pre>
+</div>
+
+<h4>Headers</h4>
+<div>
+        <div>Accept: */*</div>
+        <div>Content-Type: application/json</div>
+</div>
+
+
+
+<h4>Curl</h4>
+<div>
+curl -v -X POST &#39;https://fakerestapi.azurewebsites.net/api/v1/Books&#39; -H &#39;Accept: */*&#39; -H &#39;Content-Type: application/json&#39; -d &#39;{
+    &quot;id&quot;: 158,
+    &quot;title&quot;: &quot;Mr Standfast&quot;,
+    &quot;description&quot;: &quot;Repellat et non minima nulla qui optio architecto distinctio modi.&quot;,
+    &quot;pageCount&quot;: 712,
+    &quot;excerpt&quot;: &quot;Quas eum et inventore eligendi repellat. Dolor omnis est quidem. Aut quod vitae. Cupiditate ea nulla voluptas.&quot;,
+    &quot;publishDate&quot;: &quot;2026-11-20T09:44:31.45590038&quot;
+}&#39;
+</div>
